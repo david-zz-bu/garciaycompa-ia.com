@@ -335,30 +335,84 @@ section{ padding:5rem 0; }
 }
 
 /* ---------- Página de detalle de propiedad ---------- */
-.galeria-principal{
-  width:100%;
-  height:380px;
-  border-radius:4px;
-  background-color:#c9c2b3;
-}
-.galeria-miniaturas{
-  display:flex;
+.galeria-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  grid-template-rows:repeat(2, 160px);
   gap:.6rem;
-  margin-top:.8rem;
+  border-radius:6px;
+  overflow:hidden;
 }
-.foto-galeria-item{
-  width:80px;
-  height:60px;
-  border-radius:3px;
+.galeria-tile{
+  position:relative;
   cursor:pointer;
-  border:2px solid transparent;
-  opacity:.65;
-  transition:opacity .2s ease, border-color .2s ease;
+  border-radius:4px;
+  transition:opacity .15s ease;
 }
-.foto-galeria-item:hover{ opacity:.9; }
-.foto-galeria-item.activa{
-  opacity:1;
-  border-color:var(--verde-sabana);
+.galeria-tile:hover{ opacity:.9; }
+.overlay-mas-fotos{
+  position:absolute;
+  inset:0;
+  background:rgba(20,18,16,.55);
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:'JetBrains Mono', monospace;
+  font-size:1rem;
+  font-weight:500;
+  letter-spacing:.03em;
+  border-radius:4px;
+}
+.lightbox-galeria{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(20,18,16,.94);
+  z-index:2000;
+  align-items:center;
+  justify-content:center;
+}
+.lightbox-galeria.visible{ display:flex; }
+.lightbox-imagen{
+  width:min(85vw, 1000px);
+  height:min(75vh, 650px);
+  background-size:cover;
+  background-position:center;
+  border-radius:4px;
+}
+.lightbox-cerrar{
+  position:absolute;
+  top:1.2rem; right:1.5rem;
+  background:none;
+  border:none;
+  color:#fff;
+  font-size:2.2rem;
+  line-height:1;
+  cursor:pointer;
+}
+.lightbox-flecha{
+  background:rgba(255,255,255,.12);
+  border:none;
+  color:#fff;
+  font-size:2.5rem;
+  line-height:1;
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  cursor:pointer;
+  margin:0 1rem;
+}
+.lightbox-flecha:hover{ background:rgba(255,255,255,.22); }
+.lightbox-contador{
+  position:absolute;
+  bottom:1.5rem;
+  left:50%;
+  transform:translateX(-50%);
+  color:#fff;
+  font-family:'JetBrains Mono', monospace;
+  font-size:.85rem;
+  opacity:.85;
 }
 .precio-detalle{
   font-family:'JetBrains Mono', monospace;
@@ -402,7 +456,8 @@ section{ padding:5rem 0; }
   white-space:pre-line;
 }
 @media (max-width:767px){
-  .galeria-principal{ height:260px; }
+  .galeria-grid{ grid-template-rows:repeat(2, 110px); }
+  .lightbox-flecha{ width:40px; height:40px; font-size:1.8rem; margin:0 .4rem; }
 }
 
 /* ---------- Buscador de propiedades ---------- */
