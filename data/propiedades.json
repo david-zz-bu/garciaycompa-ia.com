@@ -74,6 +74,7 @@
     "tipo": "Apartamento",
     "negocio": "Venta",
     "precio": 3200000,
+    "administracion": 180000,
     "alcobas": 2,
     "banos": 1,
     "area_m2": 95,
