@@ -290,6 +290,90 @@ section{ padding:5rem 0; }
   padding-top:.75rem;
 }
 
+/* ---------- Link envolvente de tarjeta de propiedad ---------- */
+.card-propiedad-link{
+  display:block;
+  text-decoration:none;
+  color:inherit;
+  transition:transform .2s ease;
+}
+.card-propiedad-link:hover{
+  transform:translateY(-3px);
+}
+.card-propiedad-link:hover .card-propiedad{
+  box-shadow:0 12px 28px rgba(42,38,34,.1);
+}
+
+/* ---------- Página de detalle de propiedad ---------- */
+.galeria-principal{
+  width:100%;
+  height:380px;
+  border-radius:4px;
+  background-color:#c9c2b3;
+}
+.galeria-miniaturas{
+  display:flex;
+  gap:.6rem;
+  margin-top:.8rem;
+}
+.foto-galeria-item{
+  width:80px;
+  height:60px;
+  border-radius:3px;
+  cursor:pointer;
+  border:2px solid transparent;
+  opacity:.65;
+  transition:opacity .2s ease, border-color .2s ease;
+}
+.foto-galeria-item:hover{ opacity:.9; }
+.foto-galeria-item.activa{
+  opacity:1;
+  border-color:var(--verde-sabana);
+}
+.precio-detalle{
+  font-family:'JetBrains Mono', monospace;
+  font-size:1.7rem;
+  font-weight:500;
+  color:var(--ladrillo);
+}
+.tag-negocio-detalle{
+  display:inline-block;
+  background:var(--trigo);
+  color:var(--verde-sabana-oscuro);
+  font-family:'JetBrains Mono', monospace;
+  font-size:.75rem;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  padding:.3rem .7rem;
+  border-radius:2px;
+  font-weight:600;
+}
+.ficha-tecnica{
+  border-top:1px solid rgba(42,38,34,.08);
+  border-bottom:1px solid rgba(42,38,34,.08);
+  padding:1.25rem 0;
+}
+.ficha-num{
+  font-family:'Zilla Slab', serif;
+  font-size:1.5rem;
+  font-weight:600;
+  color:var(--verde-sabana-oscuro);
+}
+.ficha-label{
+  font-size:.78rem;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+  color:var(--piedra);
+}
+.descripcion-propiedad{
+  color:#5a5551;
+  font-size:.98rem;
+  line-height:1.6;
+}
+@media (max-width:767px){
+  .galeria-principal{ height:260px; }
+}
+
 /* ---------- Buscador de propiedades ---------- */
 .caja-buscador{
   background:#fff;

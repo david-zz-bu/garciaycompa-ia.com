@@ -22,20 +22,22 @@ function tarjetaPropiedad(p) {
 
   return `
     <div class="col-md-6 col-lg-4">
-      <div class="card-propiedad h-100">
-        <div class="foto" style="${fondo}">
-          <span class="tag-zona">${p.ciudad} · ${p.barrio}</span>
-          <span class="tag-negocio">${p.negocio}</span>
-        </div>
-        <div class="cuerpo">
-          <h3>${p.titulo}</h3>
-          <div class="precio">${formatoPrecio(p.precio)}${etiquetaNegocio}</div>
-          <div class="detalles d-flex justify-content-between">
-            <span>${p.area_m2.toLocaleString("es-CO")} m²</span>
-            ${detalleAlcobasBanos}
+      <a href="propiedad-detalle.html?id=${p.id}" class="card-propiedad-link">
+        <div class="card-propiedad h-100">
+          <div class="foto" style="${fondo}">
+            <span class="tag-zona">${p.ciudad} · ${p.barrio}</span>
+            <span class="tag-negocio">${p.negocio}</span>
+          </div>
+          <div class="cuerpo">
+            <h3>${p.titulo}</h3>
+            <div class="precio">${formatoPrecio(p.precio)}${etiquetaNegocio}</div>
+            <div class="detalles d-flex justify-content-between">
+              <span>${p.area_m2.toLocaleString("es-CO")} m²</span>
+              ${detalleAlcobasBanos}
+            </div>
           </div>
         </div>
-      </div>
+      </a>
     </div>`;
 }
 

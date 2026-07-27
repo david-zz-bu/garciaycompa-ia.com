@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500;600;700&family=Work+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/estilo.css">
+<title id="titulo-pagina">Propiedad | García &amp; Compañía</title>
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<nav class="navbar navbar-expand-lg navbar-garcia sticky-top py-3">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="images/logo-icon.png" alt="" />
+      García &amp; Compañía
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+        <li class="nav-item"><a class="nav-link active" href="propiedades.html">Propiedades</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+        <li class="nav-item">
+          <div class="redes-nav">
+            <a href="https://instagram.com/tuusuario" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://facebook.com/tuusuario" target="_blank" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://tiktok.com/@tuusuario" target="_blank" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+          </div>
+        </li>
+        <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+          <a class="nav-link btn-whatsapp-nav" href="https://wa.me/57" target="_blank">Escríbenos</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header class="hero hero-chico">
+  <div class="hero-fondo"></div>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="eyebrow mb-2"><a href="propiedades.html" style="color:var(--trigo);">← Volver a propiedades</a></div>
+    <h1 id="detalle-titulo">Cargando propiedad...</h1>
+  </div>
+</header>
+
+<section id="detalle-propiedad">
+  <div class="container">
+    <div id="detalle-contenido">
+      <!-- Se llena dinámicamente con js/detalle.js -->
+    </div>
+  </div>
+</section>
+
+<section class="contacto" id="cta-contacto">
+  <div class="container text-center">
+    <div class="eyebrow-sec mb-2" style="color:var(--trigo);">¿Te interesa esta propiedad?</div>
+    <h2 class="fs-2 mb-4" style="color:var(--crema);">Agenda una visita o pide más información</h2>
+    <div class="d-flex flex-wrap justify-content-center gap-3">
+      <a href="https://wa.me/57" target="_blank" class="btn btn-primario">Escribir por WhatsApp</a>
+      <a href="contacto.html" class="btn btn-secundario">Ir al formulario de contacto</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container d-flex flex-wrap justify-content-between align-items-center gap-3">
+    <span>© 2026 García &amp; Compañía S.A.S. — Todos los derechos reservados.</span>
+    <div class="redes-sociales">
+      <a href="https://instagram.com/tuusuario" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+      <a href="https://facebook.com/tuusuario" target="_blank" aria-label="Facebook"><i class="bi bi-whatsapp"></i></a>
+      <a href="https://wa.me/57" target="_blank" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+      <a href="https://tiktok.com/@tuusuario" target="_blank" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+    </div>
+    <span><a href="index.html">Volver arriba ↑</a></span>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="js/detalle.js"></script>
+</body>
+</html>

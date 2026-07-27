@@ -11,7 +11,9 @@
     "banos": 2,
     "area_m2": 320,
     "color": "#c9c2b3",
-    "imagen": ""
+    "imagen": "",
+    "descripcion": "Casa campestre de un piso rodeada de zonas verdes, a pocos minutos del centro de Chía. Cuenta con cocina integral, sala-comedor amplio y zona de BBQ cubierta, ideal para familias que buscan tranquilidad sin alejarse de la vía principal.",
+    "fotos": ["#c9c2b3", "#b9b3a2", "#a8a191"]
   },
   {
     "id": 2,
@@ -25,7 +27,9 @@
     "banos": 2,
     "area_m2": 140,
     "color": "#b9b3a2",
-    "imagen": ""
+    "imagen": "",
+    "descripcion": "Apartamento en conjunto cerrado con vigilancia 24 horas, balcón con vista abierta a los cerros orientales, y acceso directo a zonas comunes: piscina, gimnasio y salón social.",
+    "fotos": ["#b9b3a2", "#c9c2b3", "#8f9a93"]
   },
   {
     "id": 3,
@@ -39,7 +43,9 @@
     "banos": 3,
     "area_m2": 2400,
     "color": "#a8a191",
-    "imagen": ""
+    "imagen": "",
+    "descripcion": "Finca de recreo con amplias zonas verdes, árboles frutales y espacio suficiente para piscina o caballerizas. Vía pavimentada de acceso y a 15 minutos del casco urbano de Chía.",
+    "fotos": ["#a8a191", "#9d9584", "#b0a288"]
   },
   {
     "id": 4,
@@ -53,7 +59,9 @@
     "banos": 1,
     "area_m2": 95,
     "color": "#c4bda9",
-    "imagen": ""
+    "imagen": "",
+    "descripcion": "Apartamento totalmente remodelado, cocina abierta tipo americana, pisos en porcelanato y acabados de alta gama. Disponible para arriendo inmediato, a pocas cuadras del centro de Cajicá.",
+    "fotos": ["#c4bda9", "#cfc8b6", "#b9b3a2"]
   },
   {
     "id": 5,
@@ -67,7 +75,9 @@
     "banos": 0,
     "area_m2": 800,
     "color": "#b0a288",
-    "imagen": ""
+    "imagen": "",
+    "descripcion": "Lote esquinero con servicios públicos disponibles en el frente, apto para vivienda unifamiliar o bifamiliar según normativa vigente. Consulta con nuestro equipo el índice de ocupación y construcción para este sector.",
+    "fotos": ["#b0a288", "#a39a86", "#9d9584"]
   },
   {
     "id": 6,
@@ -81,7 +91,9 @@
     "banos": 6,
     "area_m2": 415,
     "color": "#9d9584",
-    "imagen": ""
+    "imagen": "",
+    "descripcion": "Exclusiva casa campestre con cabaña independiente para huéspedes, chimenea, jacuzzi exterior y jardines amplios. Ideal para quienes buscan privacidad y espacio para recibir visitas sin compartir áreas privadas.",
+    "fotos": ["#9d9584", "#8f9a93", "#a8a191"]
   },
   {
     "id": 7,
@@ -95,7 +107,9 @@
     "banos": 1,
     "area_m2": 60,
     "color": "#8f9a93",
-    "imagen": ""
+    "imagen": "",
+    "descripcion": "Oficina en edificio empresarial con recepción compartida, parqueadero para visitantes y fácil acceso desde la vía principal. Espacio diáfano, ideal para adecuar según necesidad del negocio.",
+    "fotos": ["#8f9a93", "#c4bda9", "#b9b3a2"]
   },
   {
     "id": 8,
@@ -109,7 +123,9 @@
     "banos": 2,
     "area_m2": 180,
     "color": "#cfc8b6",
-    "imagen": ""
+    "imagen": "",
+    "descripcion": "Casa de un piso en sector residencial tranquilo, patio trasero techado y cocina independiente. Buena opción para primera vivienda o inversión de arriendo.",
+    "fotos": ["#cfc8b6", "#c9c2b3", "#b0a288"]
   },
   {
     "id": 9,
@@ -123,6 +139,8 @@
     "banos": 0,
     "area_m2": 2874,
     "color": "#a39a86",
-    "imagen": ""
+    "imagen": "",
+    "descripcion": "Lote dentro de conjunto cerrado con portería y vigilancia, en una de las zonas campestres más buscadas de Chía. Ideal para construir vivienda de descanso o inversión a mediano plazo.",
+    "fotos": ["#a39a86", "#b0a288", "#9d9584"]
   }
 ]

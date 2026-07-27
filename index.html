@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<!--  ============ NAVBAR ============ -->
+<!-- ============ NAVBAR ============ -->
 <nav class="navbar navbar-expand-lg navbar-garcia sticky-top py-3">
   <div class="container">
     <a class="navbar-brand" href="index.html">
@@ -98,6 +98,7 @@
     </div>
     <div class="row g-4">
       <div class="col-md-6 col-lg-4">
+        <a href="propiedad-detalle.html?id=1" class="card-propiedad-link">
         <div class="card-propiedad h-100">
           <div class="foto" style="background-color:#c9c2b3;"><span class="tag-zona">Chía · Centro</span></div>
           <div class="cuerpo">
@@ -106,8 +107,10 @@
             <div class="detalles d-flex justify-content-between"><span>320 m²</span><span>3 hab · 2 baños</span></div>
           </div>
         </div>
+        </a>
       </div>
       <div class="col-md-6 col-lg-4">
+        <a href="propiedad-detalle.html?id=2" class="card-propiedad-link">
         <div class="card-propiedad h-100">
           <div class="foto" style="background-color:#b9b3a2;"><span class="tag-zona">Cajicá · Fontanar</span></div>
           <div class="cuerpo">
@@ -116,8 +119,10 @@
             <div class="detalles d-flex justify-content-between"><span>140 m²</span><span>2 hab · 2 baños</span></div>
           </div>
         </div>
+        </a>
       </div>
       <div class="col-md-6 col-lg-4">
+        <a href="propiedad-detalle.html?id=3" class="card-propiedad-link">
         <div class="card-propiedad h-100">
           <div class="foto" style="background-color:#a8a191;"><span class="tag-zona">Chía · Fonquetá</span></div>
           <div class="cuerpo">
@@ -126,6 +131,7 @@
             <div class="detalles d-flex justify-content-between"><span>2.400 m²</span><span>4 hab · 3 baños</span></div>
           </div>
         </div>
+        </a>
       </div>
     </div>
   </div>
@@ -205,7 +211,6 @@
     entradas.forEach(entrada => {
       if(entrada.isIntersecting){
         animarContador(entrada.target);
-        
         observador.unobserve(entrada.target);
       }
     });
