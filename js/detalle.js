@@ -5,14 +5,25 @@
 // por propiedad: esta misma plantilla sirve para todas.
 // ============================================================
 
+const MAX_FOTOS_GRID = 6;
+let FOTOS_ACTUALES = [];
+let INDICE_LIGHTBOX = 0;
+
 function formatoPrecioDetalle(valor) {
   return "$" + Math.round(valor).toLocaleString("es-CO");
 }
 
-function fotoGaleria(valor, esActiva) {
-  const esColor = valor.startsWith("#");
-  const fondo = esColor ? `background-color:${valor};` : `background-image:url('${valor}'); background-size:cover; background-position:center;`;
-  return `<div class="foto-galeria-item ${esActiva ? "activa" : ""}" style="${fondo}"></div>`;
+function estiloFondo(valor) {
+  return valor.startsWith("#")
+    ? `background-color:${valor};`
+    : `background-image:url('${valor}'); background-size:cover; background-position:center;`;
+}
+
+function tileGaleria(valor, index, esUltimaVisible, restantes) {
+  const overlay = (esUltimaVisible && restantes > 0)
+    ? `<div class="overlay-mas-fotos">+${restantes} fotos</div>`
+    : "";
+  return `<div class="galeria-tile" style="${estiloFondo(valor)}" data-index="${index}">${overlay}</div>`;
 }
 
 function renderizarDetalle(p) {
@@ -20,7 +31,15 @@ function renderizarDetalle(p) {
   document.getElementById("detalle-titulo").textContent = p.titulo;
 
   const etiquetaNegocio = p.negocio === "Arriendo" ? "/mes" : "";
-  const fotos = (p.fotos && p.fotos.length ? p.fotos : [p.color || "#c9c2b3"]);
+  FOTOS_ACTUALES = (p.fotos && p.fotos.length ? p.fotos : [p.color || "#c9c2b3"]);
+
+  const visibles = FOTOS_ACTUALES.slice(0, MAX_FOTOS_GRID);
+  const restantes = FOTOS_ACTUALES.length - MAX_FOTOS_GRID;
+
+  const tilesHtml = visibles.map((f, i) => {
+    const esUltimaVisible = i === visibles.length - 1;
+    return tileGaleria(f, i, esUltimaVisible, restantes);
+  }).join("");
 
   const detalleAlcobasBanos = (p.alcobas > 0 || p.banos > 0)
     ? `<div class="col-6 col-md-3"><div class="ficha-num">${p.alcobas}</div><div class="ficha-label">Alcobas</div></div>
@@ -37,10 +56,7 @@ function renderizarDetalle(p) {
   document.getElementById("detalle-contenido").innerHTML = `
     <div class="row g-5">
       <div class="col-lg-7">
-        <div class="galeria-principal" id="galeria-principal" style="${fotos[0].startsWith("#") ? `background-color:${fotos[0]};` : `background-image:url('${fotos[0]}'); background-size:cover; background-position:center;`}"></div>
-        <div class="galeria-miniaturas">
-          ${fotos.map((f, i) => fotoGaleria(f, i === 0)).join("")}
-        </div>
+        <div class="galeria-grid">${tilesHtml}</div>
         ${listaCaracteristicas}
       </div>
       <div class="col-lg-5">
@@ -56,22 +72,65 @@ function renderizarDetalle(p) {
       </div>
     </div>`;
 
-  // Clic en una miniatura cambia la foto principal
-  document.querySelectorAll(".foto-galeria-item").forEach((el, i) => {
-    el.addEventListener("click", () => {
-      const galeriaPrincipal = document.getElementById("galeria-principal");
-      const valor = fotos[i];
-      if (valor.startsWith("#")) {
-        galeriaPrincipal.style.backgroundImage = "";
-        galeriaPrincipal.style.backgroundColor = valor;
-      } else {
-        galeriaPrincipal.style.backgroundColor = "";
-        galeriaPrincipal.style.backgroundImage = `url('${valor}')`;
-      }
-      document.querySelectorAll(".foto-galeria-item").forEach(t => t.classList.remove("activa"));
-      el.classList.add("activa");
+  document.querySelectorAll(".galeria-tile").forEach(tile => {
+    tile.addEventListener("click", () => {
+      abrirLightbox(parseInt(tile.dataset.index, 10));
     });
   });
+}
+
+// ---------------- Lightbox (vista completa de todas las fotos) ----------------
+
+function crearLightboxSiNoExiste() {
+  if (document.getElementById("lightbox-galeria")) return;
+  const lightbox = document.createElement("div");
+  lightbox.id = "lightbox-galeria";
+  lightbox.className = "lightbox-galeria";
+  lightbox.innerHTML = `
+    <button class="lightbox-cerrar" aria-label="Cerrar">&times;</button>
+    <button class="lightbox-flecha lightbox-anterior" aria-label="Anterior">&#8249;</button>
+    <div class="lightbox-imagen" id="lightbox-imagen"></div>
+    <button class="lightbox-flecha lightbox-siguiente" aria-label="Siguiente">&#8250;</button>
+    <div class="lightbox-contador" id="lightbox-contador"></div>
+  `;
+  document.body.appendChild(lightbox);
+
+  lightbox.querySelector(".lightbox-cerrar").addEventListener("click", cerrarLightbox);
+  lightbox.querySelector(".lightbox-anterior").addEventListener("click", () => moverLightbox(-1));
+  lightbox.querySelector(".lightbox-siguiente").addEventListener("click", () => moverLightbox(1));
+  lightbox.addEventListener("click", (e) => {
+    if (e.target.id === "lightbox-galeria") cerrarLightbox();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (!document.getElementById("lightbox-galeria").classList.contains("visible")) return;
+    if (e.key === "Escape") cerrarLightbox();
+    if (e.key === "ArrowLeft") moverLightbox(-1);
+    if (e.key === "ArrowRight") moverLightbox(1);
+  });
+}
+
+function abrirLightbox(index) {
+  crearLightboxSiNoExiste();
+  INDICE_LIGHTBOX = index;
+  pintarLightbox();
+  document.getElementById("lightbox-galeria").classList.add("visible");
+  document.body.style.overflow = "hidden";
+}
+
+function cerrarLightbox() {
+  document.getElementById("lightbox-galeria").classList.remove("visible");
+  document.body.style.overflow = "";
+}
+
+function moverLightbox(delta) {
+  INDICE_LIGHTBOX = (INDICE_LIGHTBOX + delta + FOTOS_ACTUALES.length) % FOTOS_ACTUALES.length;
+  pintarLightbox();
+}
+
+function pintarLightbox() {
+  const valor = FOTOS_ACTUALES[INDICE_LIGHTBOX];
+  document.getElementById("lightbox-imagen").style.cssText = estiloFondo(valor);
+  document.getElementById("lightbox-contador").textContent = `${INDICE_LIGHTBOX + 1} / ${FOTOS_ACTUALES.length}`;
 }
 
 function mostrarNoEncontrada() {
