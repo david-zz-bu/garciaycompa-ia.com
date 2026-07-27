@@ -52,7 +52,7 @@
     "color": "#a8a191",
     "imagen": "images/propiedades/3/principal-1.jpg",
     "descripcion": "Finca de recreo con amplias zonas verdes, árboles frutales y espacio suficiente para piscina o caballerizas. Vía pavimentada de acceso y a 15 minutos del casco urbano de Chía.",
-    "fotos": ["#images/propiedades/3/principal-1.jpg", "images/propiedades/3/principal-2.jpg", "images/propiedades/3/principal-3.jpg", "images/propiedades/3/principal-4.jpg", "images/propiedades/3/principal-5.jpg",
+    "fotos": ["images/propiedades/3/principal-1.jpg", "images/propiedades/3/principal-2.jpg", "images/propiedades/3/principal-3.jpg", "images/propiedades/3/principal-4.jpg", "images/propiedades/3/principal-5.jpg",
     "images/propiedades/3/principal-6.jpg"],
     "caracteristicas": ["Árboles frutales", "Espacio para piscina", "Zona apta para caballerizas", "Vía pavimentada", "Cerca perimetral", "Pozo de agua propio"]
   },
