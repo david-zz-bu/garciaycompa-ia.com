@@ -399,6 +399,7 @@ section{ padding:5rem 0; }
   color:#5a5551;
   font-size:.98rem;
   line-height:1.6;
+  white-space:pre-line;
 }
 @media (max-width:767px){
   .galeria-principal{ height:260px; }
