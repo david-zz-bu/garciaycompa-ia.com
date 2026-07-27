@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500;600;700&family=Work+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/estilo.css">
+<title>Propiedades | García &amp; Compañía</title>
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<nav class="navbar navbar-expand-lg navbar-garcia sticky-top py-3">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="images/logo-icon.png" alt="" />
+      García &amp; Compañía
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+        <li class="nav-item"><a class="nav-link active" href="propiedades.html">Propiedades</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+        <li class="nav-item">
+          <div class="redes-nav">
+            <a href="https://instagram.com/tuusuario" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://facebook.com/tuusuario" target="_blank" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://tiktok.com/@tuusuario" target="_blank" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+          </div>
+        </li>
+        <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+          <a class="nav-link btn-whatsapp-nav" href="https://wa.me/57" target="_blank">Escríbenos</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header class="hero hero-chico">
+  <div class="hero-fondo"></div>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="eyebrow mb-2">García &amp; Compañía</div>
+    <h1>Propiedades</h1>
+  </div>
+</header>
+
+<section id="buscador">
+  <div class="container">
+    <div class="caja-buscador">
+      <h3 class="titulo-buscador mb-4">Búsqueda avanzada</h3>
+      <form id="form-buscador" class="row g-3 align-items-end">
+        <div class="col-6 col-md-4 col-lg-2">
+          <label>Ciudad</label>
+          <select id="f-ciudad" class="form-select">
+            <option value="">Todas</option>
+          </select>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <label>Tipo de inmueble</label>
+          <select id="f-tipo" class="form-select">
+            <option value="">Todos</option>
+            <option value="Casa">Casa</option>
+            <option value="Apartamento">Apartamento</option>
+            <option value="Campestre">Campestre</option>
+            <option value="Lote terreno">Lote terreno</option>
+            <option value="Oficina">Oficina</option>
+            <option value="Terreno">Terreno</option>
+          </select>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <label>Tipo de negocio</label>
+          <select id="f-negocio" class="form-select">
+            <option value="">Todos</option>
+            <option value="Venta">Venta</option>
+            <option value="Arriendo">Arriendo</option>
+          </select>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <label>Alcobas</label>
+          <select id="f-alcobas" class="form-select">
+            <option value="0">Todas</option>
+            <option value="1">1 o más</option>
+            <option value="2">2 o más</option>
+            <option value="3">3 o más</option>
+            <option value="4">4 o más</option>
+            <option value="5">5 o más</option>
+          </select>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <label>Precio desde</label>
+          <input type="number" id="f-precio-desde" class="form-control" placeholder="$ Desde">
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <label>Precio hasta</label>
+          <input type="number" id="f-precio-hasta" class="form-control" placeholder="$ Hasta">
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primario">BUSCAR</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="propiedades" style="padding-top:2rem;">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center flex-wrap mb-4 gap-2">
+      <p class="mb-0" style="color:var(--piedra); max-width:520px;">
+        Explora nuestro catálogo actual. Contáctanos para agendar una visita.
+      </p>
+      <span id="contador-resultados" class="contador-resultados"></span>
+    </div>
+    <div class="row g-4" id="resultados-propiedades">
+      <!-- Las tarjetas se generan dinámicamente desde data/propiedades.json -->
+    </div>
+  </div>
+</section>
+
+<section class="bg-piedra-suave">
+  <div class="container">
+    <div class="eyebrow-sec mb-2">Cobertura</div>
+    <h2 class="titulo-sec fs-3 mb-4">Zonas donde trabajamos</h2>
+    <p class="mb-4" style="color:#5a5551; max-width:600px;">
+      No cubrimos "toda la sabana" de forma genérica — priorizamos las zonas donde tenemos volumen y consistencia
+      de datos suficiente para asesorar con criterio, actualizadas periódicamente.
+    </p>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="card-zona">
+          <div class="municipio">Chía</div>
+          <h3>Centro / casco urbano</h3>
+          <p>La zona con mayor volumen de propiedades y precios más consistentes entre $500M y $2.500M.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card-zona">
+          <div class="municipio">Cajicá</div>
+          <h3>Centro / casco urbano</h3>
+          <p>Segunda zona en volumen, con oferta estable a lo largo del año.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card-zona">
+          <div class="municipio">Chía / Cajicá</div>
+          <h3>Fontanar y Bojacá</h3>
+          <p>Zona fronteriza entre ambos municipios, la agrupamos como una sola porque el mercado ahí se mueve igual de un lado que del otro.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer>
+  <div class="container d-flex flex-wrap justify-content-between align-items-center gap-3">
+    <span>© 2026 García &amp; Compañía S.A.S. — Todos los derechos reservados.</span>
+    <div class="redes-sociales">
+      <a href="https://instagram.com/tuusuario" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+      <a href="https://facebook.com/tuusuario" target="_blank" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+      <a href="https://wa.me/57" target="_blank" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+      <a href="https://tiktok.com/@tuusuario" target="_blank" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+    </div>
+    <span><a href="index.html">Volver arriba ↑</a></span>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="js/buscador.js"></script>
+</body>
+</html>
