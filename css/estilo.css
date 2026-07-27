@@ -335,6 +335,7 @@ section{ padding:5rem 0; }
 }
 
 /* ---------- Página de detalle de propiedad ---------- */
+
 .galeria-grid{
   display:grid;
   grid-template-columns:repeat(3, 1fr);
@@ -413,6 +414,17 @@ section{ padding:5rem 0; }
   font-family:'JetBrains Mono', monospace;
   font-size:.85rem;
   opacity:.85;
+}
+.codigo-inmueble{
+  font-family:'JetBrains Mono', monospace;
+  font-size:.78rem;
+  color:var(--piedra);
+  margin-bottom:.4rem;
+}
+.admin-inmueble{
+  font-size:.85rem;
+  color:var(--piedra);
+  margin-bottom:.5rem;
 }
 .precio-detalle{
   font-family:'JetBrains Mono', monospace;
