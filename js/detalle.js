@@ -41,9 +41,26 @@ function renderizarDetalle(p) {
     return tileGaleria(f, i, esUltimaVisible, restantes);
   }).join("");
 
-  const detalleAlcobasBanos = (p.alcobas > 0 || p.banos > 0)
-    ? `<div class="col-6 col-md-3"><div class="ficha-num">${p.alcobas}</div><div class="ficha-label">Alcobas</div></div>
-       <div class="col-6 col-md-3"><div class="ficha-num">${p.banos}</div><div class="ficha-label">Baños</div></div>`
+  // Ficha técnica: m² siempre se muestra; el resto solo si el dato existe
+  const itemsFicha = [
+    { num: p.area_m2.toLocaleString("es-CO"), label: "m²" }
+  ];
+  if (p.alcobas > 0) itemsFicha.push({ num: p.alcobas, label: "Alcobas" });
+  if (p.banos > 0) itemsFicha.push({ num: p.banos, label: "Baños" });
+  if (p.parqueaderos) itemsFicha.push({ num: p.parqueaderos, label: "Parqueaderos" });
+  if (p.estrato) itemsFicha.push({ num: p.estrato, label: "Estrato" });
+  if (p.antiguedad) itemsFicha.push({ num: p.antiguedad, label: "Antigüedad" });
+
+  const fichaTecnicaHtml = itemsFicha.map(item =>
+    `<div class="col-6 col-md-3"><div class="ficha-num">${item.num}</div><div class="ficha-label">${item.label}</div></div>`
+  ).join("");
+
+  const codigoHtml = p.codigo
+    ? `<div class="codigo-inmueble">Cód. ${p.codigo}</div>`
+    : "";
+
+  const adminHtml = p.administracion
+    ? `<div class="admin-inmueble">Administración: ${formatoPrecioDetalle(p.administracion)}/mes</div>`
     : "";
 
   const listaCaracteristicas = (p.caracteristicas && p.caracteristicas.length)
@@ -61,11 +78,12 @@ function renderizarDetalle(p) {
       </div>
       <div class="col-lg-5">
         <div class="eyebrow-sec mb-2">${p.ciudad} · ${p.barrio}</div>
-        <div class="precio-detalle mb-3">${formatoPrecioDetalle(p.precio)}${etiquetaNegocio}</div>
-        <div class="tag-negocio-detalle mb-4">${p.negocio}</div>
+        ${codigoHtml}
+        <div class="precio-detalle mb-1">${formatoPrecioDetalle(p.precio)}${etiquetaNegocio}</div>
+        ${adminHtml}
+        <div class="tag-negocio-detalle mb-4 mt-2">${p.negocio}</div>
         <div class="row g-3 mb-4 ficha-tecnica">
-          <div class="col-6 col-md-3"><div class="ficha-num">${p.area_m2.toLocaleString("es-CO")}</div><div class="ficha-label">m²</div></div>
-          ${detalleAlcobasBanos}
+          ${fichaTecnicaHtml}
         </div>
         <p class="descripcion-propiedad">${p.descripcion || ""}</p>
         <a href="https://wa.me/57" target="_blank" class="btn btn-primario w-100 mt-3">Preguntar por esta propiedad</a>
