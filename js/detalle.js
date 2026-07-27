@@ -27,6 +27,13 @@ function renderizarDetalle(p) {
        <div class="col-6 col-md-3"><div class="ficha-num">${p.banos}</div><div class="ficha-label">Baños</div></div>`
     : "";
 
+  const listaCaracteristicas = (p.caracteristicas && p.caracteristicas.length)
+    ? `<h3 class="titulo-caracteristicas mt-4 mb-3">Características</h3>
+       <ul class="lista-caracteristicas">
+         ${p.caracteristicas.map(c => `<li><i class="bi bi-check2"></i>${c}</li>`).join("")}
+       </ul>`
+    : "";
+
   document.getElementById("detalle-contenido").innerHTML = `
     <div class="row g-5">
       <div class="col-lg-7">
@@ -34,6 +41,7 @@ function renderizarDetalle(p) {
         <div class="galeria-miniaturas">
           ${fotos.map((f, i) => fotoGaleria(f, i === 0)).join("")}
         </div>
+        ${listaCaracteristicas}
       </div>
       <div class="col-lg-5">
         <div class="eyebrow-sec mb-2">${p.ciudad} · ${p.barrio}</div>

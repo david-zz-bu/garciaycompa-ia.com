@@ -304,6 +304,36 @@ section{ padding:5rem 0; }
   box-shadow:0 12px 28px rgba(42,38,34,.1);
 }
 
+.titulo-caracteristicas{
+  font-family:'JetBrains Mono', monospace;
+  font-size:.85rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--ladrillo);
+}
+.lista-caracteristicas{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:.7rem 1rem;
+}
+.lista-caracteristicas li{
+  display:flex;
+  align-items:flex-start;
+  gap:.5rem;
+  font-size:.95rem;
+  color:#5a5551;
+}
+.lista-caracteristicas li i{
+  color:var(--verde-sabana);
+  margin-top:.2rem;
+}
+@media (max-width:575px){
+  .lista-caracteristicas{ grid-template-columns:1fr; }
+}
+
 /* ---------- Página de detalle de propiedad ---------- */
 .galeria-principal{
   width:100%;
