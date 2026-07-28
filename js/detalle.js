@@ -11,7 +11,7 @@ let INDICE_LIGHTBOX = 0;
 
 function textoDescripcion(descripcion) {
   if (Array.isArray(descripcion)) {
-    return descripcion.join("\n\n");
+    return descripcion.join("\n");
   }
   return descripcion || "";
 }
