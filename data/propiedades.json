@@ -102,7 +102,7 @@
     "color": "#c4bda9",
     "imagen": "images/propiedades/4/principal-1.png",
     "descripcion": "Apartamento totalmente remodelado, cocina abierta tipo americana, pisos en porcelanato y acabados de alta gama. Disponible para arriendo inmediato, a pocas cuadras del centro de Cajicá.",
-    "fotos": ["images/propiedades/4/principal-2.jpg", "images/propiedades/4/principal-3.jpg", "images/propiedades/4/principal-4.jpg", "images/propiedades/4/principal-5.jpg", "images/propiedades/4/principal-6.jpg",
+    "fotos": ["images/propiedades/4/principal-1.png", "images/propiedades/4/principal-2.jpg", "images/propiedades/4/principal-3.jpg", "images/propiedades/4/principal-4.jpg", "images/propiedades/4/principal-5.jpg", "images/propiedades/4/principal-6.jpg",
     "images/propiedades/4/principal-7.jpg", "images/propiedades/4/principal-8.jpg", "images/propiedades/4/principal-9.jpg", "images/propiedades/4/principal-10.jpg", "images/propiedades/4/principal-11.jpg", 
     "images/propiedades/4/principal-12.png", "images/propiedades/4/principal-13.jpg", "images/propiedades/4/principal-15.jpg", "images/propiedades/4/principal-16.jpg", "images/propiedades/4/principal-17.jpg"],
     "caracteristicas": ["Cocina tipo americana", "Pisos en porcelanato", "Remodelación reciente", "Closets empotrados", "Parqueadero visitantes", "Disponible de inmediato"]
