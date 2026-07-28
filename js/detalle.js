@@ -57,6 +57,7 @@ function renderizarDetalle(p) {
   if (p.parqueaderos) itemsFicha.push({ num: p.parqueaderos, label: "Parqueaderos" });
   if (p.estrato) itemsFicha.push({ num: p.estrato, label: "Estrato" });
   if (p.antiguedad) itemsFicha.push({ num: p.antiguedad, label: "Antigüedad" });
+  if (p.pisos) itemsFicha.push({ num: p.pisos, label: "Pisos" });
 
   const fichaTecnicaHtml = itemsFicha.map(item =>
     `<div class="col-6 col-md-3"><div class="ficha-num">${item.num}</div><div class="ficha-label">${item.label}</div></div>`
