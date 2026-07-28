@@ -9,6 +9,13 @@ const MAX_FOTOS_GRID = 6;
 let FOTOS_ACTUALES = [];
 let INDICE_LIGHTBOX = 0;
 
+function textoDescripcion(descripcion) {
+  if (Array.isArray(descripcion)) {
+    return descripcion.join("\n\n");
+  }
+  return descripcion || "";
+}
+
 function formatoPrecioDetalle(valor) {
   return "$" + Math.round(valor).toLocaleString("es-CO");
 }
@@ -89,7 +96,7 @@ function renderizarDetalle(p) {
         <div class="row g-3 mb-4 ficha-tecnica">
           ${fichaTecnicaHtml}
         </div>
-        <p class="descripcion-propiedad">${p.descripcion || ""}</p>
+        <p class="descripcion-propiedad">${textoDescripcion(p.descripcion)}</p>
         <a href="https://wa.me/57" target="_blank" class="btn btn-primario w-100 mt-3">Preguntar por esta propiedad</a>
       </div>
     </div>`;
