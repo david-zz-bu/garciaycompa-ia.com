@@ -14,7 +14,7 @@
     "imagen": "images/propiedades/1/principal.png",
     "descripcion": "Ubicada en un sector de alta valorización, a tan solo 25 minutos de Tunja, esta propiedad es ideal para quienes buscan un entorno tranquilo, seguro y rodeado de naturaleza, sin renunciar a la cercanía con la ciudad. El lote de 1.358 m² ofrece una imponente vista panorámica, mientras que su construcción de 335 m² combina diseño, confort y exclusividad.\n\n✨ Distribución interior pensada para el confort\n\n- 3 habitaciones amplias con baño privado; la principal con walking closet y baño con doble lavamanos.\n- Una habitación secundaria con altillo, perfecta para aprovechar cada espacio.\n- Sala-comedor de gran tamaño con chimenea, iluminado estudio y área de gimnasio.\n- Cocina integral abierta con isla central, detalles tipo granero y zona de lavandería con techo corredizo.\n- Jardín interior, baño social y un diseño que integra la comodidad moderna con la calidez campestre.",
     "fotos": ["images/propiedades/1/principal.png", "images/propiedades/1/principal-2.jpg", "images/propiedades/1/principal-3.jpg","images/propiedades/1/principal-4.jpg"],
-    "caracteristicasExternas": ["Zona de BBQ cubierta",  "Patio con zona verde", "Parqueadero para 2 vehículos", "Vía pavimentada de acceso"]
+    "caracteristicasExternas": ["Zona de BBQ cubierta",  "Patio con zona verde", "Parqueadero para 2 vehículos", "Vía pavimentada de acceso"],
     "caracteristicasInternas": ["Cocina integral", "Cuarto útil"
     ]
   },
@@ -38,7 +38,7 @@
     "images/propiedades/2/principal-15.jpg", "images/propiedades/2/principal-16.jpg", "images/propiedades/2/principal-17.jpg", "images/propiedades/2/principal-18.jpg", "images/propiedades/2/principal-19.jpg", 
     "images/propiedades/2/principal-20.jpg", "images/propiedades/2/principal-21.jpg", "images/propiedades/2/principal-22.jpg", "images/propiedades/2/principal-23.jpg", "images/propiedades/2/principal-24.jpg", 
     "images/propiedades/2/principal-25.jpg", "images/propiedades/2/principal-26.jpg"],
-    "caracteristicasExternas": ["Agua", "Electricidad", "Urbanización cerrada", "Zona campestre"]
+    "caracteristicasExternas": ["Agua", "Electricidad", "Urbanización cerrada", "Zona campestre"],
     "caracteristicasInternas": ["Zona residencial"]
   },
   {
@@ -83,7 +83,7 @@
     "images/propiedades/3/principal-51.jpg", "images/propiedades/3/principal-52.jpg", "images/propiedades/3/principal-53.jpg", "images/propiedades/3/principal-54.jpg", "images/propiedades/3/principal-55.jpg",
     "images/propiedades/3/principal-56.jpg"],
     "caracteristicasExternas": ["Agua", "Barra estilo americano", "Cocina equipada", "Hall de alcobas", "Armarios Empotrados", "Biblioteca/Estudio", "Doble ventana", 
-    "Suelo de cerámica/ mármol", "Baño en habitación principal", "Clósets", "Electricidad", "Unifamiliar", "Urbanización Cerrada"] 
+    "Suelo de cerámica/ mármol", "Baño en habitación principal", "Clósets", "Electricidad", "Unifamiliar", "Urbanización Cerrada"],
     "caracteristicasIxternas": ["Agua", "Barra estilo americano", "Cocina equipada", "Hall de alcobas", "Armarios Empotrados", "Biblioteca/Estudio", "Doble ventana", 
     "Suelo de cerámica/ mármol", "Baño en habitación principal", "Clósets", "Electricidad", "Unifamiliar", "Urbanización Cerrada"     
     ]
@@ -110,7 +110,7 @@
     "fotos": ["images/propiedades/4/principal-1.png", "images/propiedades/4/principal-2.jpg", "images/propiedades/4/principal-3.jpg", "images/propiedades/4/principal-4.jpg", "images/propiedades/4/principal-5.jpg", "images/propiedades/4/principal-6.jpg",
     "images/propiedades/4/principal-7.jpg", "images/propiedades/4/principal-8.jpg", "images/propiedades/4/principal-9.jpg", "images/propiedades/4/principal-10.jpg", "images/propiedades/4/principal-11.jpg", 
     "images/propiedades/4/principal-12.png", "images/propiedades/4/principal-13.jpg", "images/propiedades/4/principal-15.jpg", "images/propiedades/4/principal-16.jpg", "images/propiedades/4/principal-17.jpg"],
-    "caracteristicasExternas": ["Cocina tipo americana", "Pisos en porcelanato", "Remodelación reciente", "Closets empotrados", "Parqueadero visitantes", "Disponible de inmediato"]
+    "caracteristicasExternas": ["Cocina tipo americana", "Pisos en porcelanato", "Remodelación reciente", "Closets empotrados", "Parqueadero visitantes", "Disponible de inmediato"],
     "caracteristicasInternas": []
   },
   {
