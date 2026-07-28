@@ -84,7 +84,7 @@
     "images/propiedades/3/principal-56.jpg"],
     "caracteristicasExternas": ["Agua", "Barra estilo americano", "Cocina equipada", "Hall de alcobas", "Armarios Empotrados", "Biblioteca/Estudio", "Doble ventana", 
     "Suelo de cerámica/ mármol", "Baño en habitación principal", "Clósets", "Electricidad", "Unifamiliar", "Urbanización Cerrada"],
-    "caracteristicasIxternas": ["Agua", "Barra estilo americano", "Cocina equipada", "Hall de alcobas", "Armarios Empotrados", "Biblioteca/Estudio", "Doble ventana", 
+    "caracteristicasInternas": ["Agua", "Barra estilo americano", "Cocina equipada", "Hall de alcobas", "Armarios Empotrados", "Biblioteca/Estudio", "Doble ventana", 
     "Suelo de cerámica/ mármol", "Baño en habitación principal", "Clósets", "Electricidad", "Unifamiliar", "Urbanización Cerrada"     
     ]
    },
