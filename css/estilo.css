@@ -365,6 +365,25 @@ section{ padding:5rem 0; }
   letter-spacing:.03em;
   border-radius:4px;
 }
+.btn-tour360{
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  margin-top:.9rem;
+  padding:.55rem 1rem;
+  background:var(--verde-sabana-oscuro);
+  color:#fff;
+  text-decoration:none;
+  font-family:'JetBrains Mono', monospace;
+  font-size:.82rem;
+  letter-spacing:.03em;
+  border-radius:3px;
+  transition:background .15s ease;
+}
+.btn-tour360:hover{
+  background:var(--verde-sabana);
+  color:#fff;
+}
 .lightbox-galeria{
   display:none;
   position:fixed;
