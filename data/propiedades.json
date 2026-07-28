@@ -55,7 +55,8 @@
     "parqueaderos": 5,
     "antiguedad": 2000,
     "pisos": 2,
-    "area_m2": 325,
+    "area_m2": 957,
+    "area_construida": 325,
     "color": "#a8a191",
     "imagen": "images/propiedades/3/principal-1.jpg",
     "descripcion": [
@@ -126,6 +127,7 @@
     "titulo": "VENTA - CASA CAMPESTRE EXCLUSIVA EN CÁJICA - CON CABAÑA INDEPENDIENTE",
     "ciudad": "Cajicá",
     "barrio": "Calahorra",
+    "codigo": "9598043"
     "estrato": 2,
     "antiguedad": 2015,
     "tipo": "Casa Campestre",
@@ -133,11 +135,15 @@
     "precio": 2400000000,
     "alcobas": 5,
     "banos": 6,
-    "area_m2": 1317, "Área privava, ", "415", "Área construida" ,
+    "area_m2": 1317,
+    "area_construida": 413,
     "color": "#b0a288",
-    "imagen": "",
+    "imagen": "images/propiedades/5/principal-1.jpg",
     "descripcion": "Lote esquinero con servicios públicos disponibles en el frente, apto para vivienda unifamiliar o bifamiliar según normativa vigente. Consulta con nuestro equipo el índice de ocupación y construcción para este sector.",
-    "fotos": ["#b0a288", "#a39a86", "#9d9584"],
+    "fotos": ["images/propiedades/5/principal-1.jpg", "images/propiedades/5/principal-2.jpg", "images/propiedades/5/principal-3.jpg", "images/propiedades/5/principal-4.jpg", "images/propiedades/5/principal-5.jpg",
+    "images/propiedades/5/principal-6.jpg", "images/propiedades/5/principal-7.jpg", "images/propiedades/5/principal-8.jpg", "images/propiedades/5/principal-9.jpg", "images/propiedades/5/principal-10.jpg", 
+    "images/propiedades/5/principal-11.jpg", "images/propiedades/5/principal-12.jpg", "images/propiedades/5/principal-13.jpg", "images/propiedades/5/principal-14.jpg", "images/propiedades/5/principal-15.jpg",
+    "images/propiedades/5/principal-16.jpg", "images/propiedades/5/principal-17.jpg", "images/propiedades/5/principal-18.jpg", "images/propiedades/5/principal-19.jpg", "images/propiedades/5/principal-20.jpg",],
     "caracteristicas": ["Lote esquinero", "Servicios públicos en el frente", "Apto para unifamiliar o bifamiliar", "Topografía plana", "Vía de acceso pavimentada"]
   },
   {
