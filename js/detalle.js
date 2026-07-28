@@ -74,19 +74,26 @@ function renderizarDetalle(p) {
   ? `<a href="${p.tour360}" target="_blank" class="btn-tour360"><i class="bi bi-arrows-fullscreen"></i> Ver tour 360°</a>`
   : "";
 
-  const listaCaracteristicas = (p.caracteristicas && p.caracteristicas.length)
-    ? `<h3 class="titulo-caracteristicas mt-4 mb-3">Características</h3>
-       <ul class="lista-caracteristicas">
-         ${p.caracteristicas.map(c => `<li><i class="bi bi-check2"></i>${c}</li>`).join("")}
+  const listaCaracteristicasExternas = (p.caracteristicasExternas && p.caracteristicasExternas.length)
+    ? `<h3 class="titulo-caracteristicas mt-4 mb-3">Características Externas</h3>
+       <ul class="lista-caracteristicasExternas">
+         ${p.caracteristicasExternas.map(c => `<li><i class="bi bi-check2"></i>${c}</li>`).join("")}
        </ul>`
     : "";
+  const listaCaracteristicasInternas = (p.caracteristicasIxternas && p.caracteristicasIxternas.length)
+    ? `<h3 class="titulo-caracteristicas mt-4 mb-3">Características Internas</h3>
+       <ul class="lista-caracteristicasInternas">
+         ${p.caracteristicasInternas.map(c => `<li><i class="bi bi-check2"></i>${c}</li>`).join("")}
+       </ul>`
+    : "";  
 
   document.getElementById("detalle-contenido").innerHTML = `
     <div class="row g-5">
       <div class="col-lg-7">
         <div class="galeria-grid">${tilesHtml}</div>
         ${tour360Html}
-        ${listaCaracteristicas}
+        ${listaCaracteristicasExternas}
+        ${listaCaracteristicasInternas}
       </div>
       <div class="col-lg-5">
         <div class="eyebrow-sec mb-2">${p.ciudad} · ${p.barrio}</div>
