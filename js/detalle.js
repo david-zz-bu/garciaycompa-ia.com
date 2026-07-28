@@ -80,7 +80,7 @@ function renderizarDetalle(p) {
          ${p.caracteristicasExternas.map(c => `<li><i class="bi bi-check2"></i>${c}</li>`).join("")}
        </ul>`
     : "";
-  const listaCaracteristicasInternas = (p.caracteristicasIxternas && p.caracteristicasIxternas.length)
+  const listaCaracteristicasInternas = (p.caracteristicasInternas && p.caracteristicasInternas.length)
     ? `<h3 class="titulo-caracteristicas mt-4 mb-3">Características Internas</h3>
        <ul class="lista-caracteristicasInternas">
          ${p.caracteristicasInternas.map(c => `<li><i class="bi bi-check2"></i>${c}</li>`).join("")}
