@@ -56,7 +56,7 @@ function renderizarDetalle(p) {
   if (p.banos > 0) itemsFicha.push({ num: p.banos, label: "Baños" });
   if (p.parqueaderos) itemsFicha.push({ num: p.parqueaderos, label: "Parqueaderos" });
   if (p.estrato) itemsFicha.push({ num: p.estrato, label: "Estrato" });
-  if (p.antiguedad) itemsFicha.push({ num: p.antiguedad, label: "Antigüedad" });
+  if (p.antiguedad) itemsFicha.push({ num: p.antiguedad, label: "Año construcción" });
   if (p.pisos) itemsFicha.push({ num: p.pisos, label: "Pisos" });
 
   const fichaTecnicaHtml = itemsFicha.map(item =>
