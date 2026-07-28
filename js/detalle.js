@@ -54,6 +54,7 @@ function renderizarDetalle(p) {
   ];
   if (p.alcobas > 0) itemsFicha.push({ num: p.alcobas, label: "Alcobas" });
   if (p.banos > 0) itemsFicha.push({ num: p.banos, label: "Baños" });
+  if (p.area_construida) itemsFicha.push({ num: p.area_construida.toLocaleString("es-CO"), label: "m² construidos" });
   if (p.parqueaderos) itemsFicha.push({ num: p.parqueaderos, label: "Parqueaderos" });
   if (p.estrato) itemsFicha.push({ num: p.estrato, label: "Estrato" });
   if (p.antiguedad) itemsFicha.push({ num: p.antiguedad, label: "Año construcción" });
