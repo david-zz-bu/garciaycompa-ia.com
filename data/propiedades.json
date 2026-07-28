@@ -144,8 +144,11 @@
     "images/propiedades/5/principal-6.jpg", "images/propiedades/5/principal-7.jpg", "images/propiedades/5/principal-8.jpg", "images/propiedades/5/principal-9.jpg", "images/propiedades/5/principal-10.jpg", 
     "images/propiedades/5/principal-11.jpg", "images/propiedades/5/principal-12.jpg", "images/propiedades/5/principal-13.jpg", "images/propiedades/5/principal-14.jpg", "images/propiedades/5/principal-15.jpg",
     "images/propiedades/5/principal-16.jpg", "images/propiedades/5/principal-17.jpg", "images/propiedades/5/principal-18.jpg", "images/propiedades/5/principal-19.jpg", "images/propiedades/5/principal-20.jpg"],
-    "caracteristicasInternas": ["Lote esquinero", "Servicios públicos en el frente", "Apto para unifamiliar o bifamiliar", "Topografía plana", "Vía de acceso pavimentada"],
-    "caracteristicasExternas": [""]
+    "caracteristicasInternas": ["Agua", "Biblioteca/Estudio", "Comedor auxiliar", "Electricidad", "Hall de alcobas", "Inmuebles de lujo", "Balcón", "Clósets", "Depósito", "Gas domiciliario", "Zona de lavandería", 
+      "Lavaplatos", "Baño en habitación principal", "Cocina equipada", "Doble ventana", "Habitación servicio", "Chimenea"],
+    "caracteristicasExternas": ["Acceso pavimentado", "Garaje", "Portería/Recepción", "Urbanización Cerrada", "Centro Médico", "Cerca a restaurantes", "Barbacoa / Parrilla / Quincho", "Jardín", "Terraza", "Vigilancia",
+    "Centros Comerciales", "Colegios / Universidades", "Parqueadero visitantes", "Trans. p[ublico cercano", "Zona residencial", "Cerca a Jardines y Colegios"]
+    
   },
   {
     "id": 6,
