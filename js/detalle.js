@@ -76,13 +76,13 @@ function renderizarDetalle(p) {
 
   const listaCaracteristicasExternas = (p.caracteristicasExternas && p.caracteristicasExternas.length)
     ? `<h3 class="titulo-caracteristicas mt-4 mb-3">Características Externas</h3>
-       <ul class="lista-caracteristicasExternas">
+       <ul class="lista-caracteristicas">
          ${p.caracteristicasExternas.map(c => `<li><i class="bi bi-check2"></i>${c}</li>`).join("")}
        </ul>`
     : "";
   const listaCaracteristicasInternas = (p.caracteristicasInternas && p.caracteristicasInternas.length)
     ? `<h3 class="titulo-caracteristicas mt-4 mb-3">Características Internas</h3>
-       <ul class="lista-caracteristicasInternas">
+       <ul class="lista-caracteristicas">
          ${p.caracteristicasInternas.map(c => `<li><i class="bi bi-check2"></i>${c}</li>`).join("")}
        </ul>`
     : "";  
