@@ -14,9 +14,8 @@
     "imagen": "images/propiedades/1/principal.png",
     "descripcion": "Ubicada en un sector de alta valorización, a tan solo 25 minutos de Tunja, esta propiedad es ideal para quienes buscan un entorno tranquilo, seguro y rodeado de naturaleza, sin renunciar a la cercanía con la ciudad. El lote de 1.358 m² ofrece una imponente vista panorámica, mientras que su construcción de 335 m² combina diseño, confort y exclusividad.\n\n✨ Distribución interior pensada para el confort\n\n- 3 habitaciones amplias con baño privado; la principal con walking closet y baño con doble lavamanos.\n- Una habitación secundaria con altillo, perfecta para aprovechar cada espacio.\n- Sala-comedor de gran tamaño con chimenea, iluminado estudio y área de gimnasio.\n- Cocina integral abierta con isla central, detalles tipo granero y zona de lavandería con techo corredizo.\n- Jardín interior, baño social y un diseño que integra la comodidad moderna con la calidez campestre.",
     "fotos": ["images/propiedades/1/principal.png", "images/propiedades/1/principal-2.jpg", "images/propiedades/1/principal-3.jpg","images/propiedades/1/principal-4.jpg"],
-    "caracteristicasExternas": ["Zona de BBQ cubierta",  "Patio con zona verde", "Parqueadero para 2 vehículos", "Vía pavimentada de acceso"],
-    "caracteristicasInternas": ["Cocina integral", "Cuarto útil"
-    ]
+    "caracteristicasInternas": ["Cocina integral", "Cuarto útil"],
+    "caracteristicasExternas": ["Zona de BBQ cubierta",  "Patio con zona verde", "Parqueadero para 2 vehículos", "Vía pavimentada de acceso"], 
   },
   {
     "id": 2,
@@ -38,8 +37,8 @@
     "images/propiedades/2/principal-15.jpg", "images/propiedades/2/principal-16.jpg", "images/propiedades/2/principal-17.jpg", "images/propiedades/2/principal-18.jpg", "images/propiedades/2/principal-19.jpg", 
     "images/propiedades/2/principal-20.jpg", "images/propiedades/2/principal-21.jpg", "images/propiedades/2/principal-22.jpg", "images/propiedades/2/principal-23.jpg", "images/propiedades/2/principal-24.jpg", 
     "images/propiedades/2/principal-25.jpg", "images/propiedades/2/principal-26.jpg"],
-    "caracteristicasExternas": ["Agua", "Electricidad", "Urbanización cerrada", "Zona campestre"],
-    "caracteristicasInternas": ["Zona residencial"]
+    "caracteristicasInternas": ["Agua", "Electricidad", "Urbanización cerrada", "Zona campestre"],
+    "caracteristicasExternas": ["Zona residencial"]
   },
   {
     "id": 3,
@@ -82,11 +81,9 @@
     "images/propiedades/3/principal-46.jpg", "images/propiedades/3/principal-47.jpg", "images/propiedades/3/principal-48.jpg", "images/propiedades/3/principal-49.jpg", "images/propiedades/3/principal-50.jpg",
     "images/propiedades/3/principal-51.jpg", "images/propiedades/3/principal-52.jpg", "images/propiedades/3/principal-53.jpg", "images/propiedades/3/principal-54.jpg", "images/propiedades/3/principal-55.jpg",
     "images/propiedades/3/principal-56.jpg"],
-    "caracteristicasExternas": ["Agua", "Barra estilo americano", "Cocina equipada", "Hall de alcobas", "Armarios Empotrados", "Biblioteca/Estudio", "Doble ventana", 
-    "Suelo de cerámica/ mármol", "Baño en habitación principal", "Clósets", "Electricidad", "Unifamiliar", "Urbanización Cerrada"],
     "caracteristicasInternas": ["Agua", "Barra estilo americano", "Cocina equipada", "Hall de alcobas", "Armarios Empotrados", "Biblioteca/Estudio", "Doble ventana", 
-    "Suelo de cerámica/ mármol", "Baño en habitación principal", "Clósets", "Electricidad", "Unifamiliar", "Urbanización Cerrada"     
-    ]
+    "Suelo de cerámica/ mármol", "Baño en habitación principal", "Clósets", "Electricidad", "Unifamiliar", "Urbanización Cerrada"],
+    "caracteristicasExternas": ["Cerca zona urbana", "Urbanización cerrada", "Zona residencial", "Zonas verdes"]    
    },
   {
     "id": 4,
@@ -106,12 +103,23 @@
     "area_m2": 247.52,
     "color": "#c4bda9",
     "imagen": "images/propiedades/4/principal-1.png",
-    "descripcion": "Apartamento totalmente remodelado, cocina abierta tipo americana, pisos en porcelanato y acabados de alta gama. Disponible para arriendo inmediato, a pocas cuadras del centro de Cajicá.",
+    "descripcion": [
+    "Oportunidad única en Rosales: amplio apartamento para REMODELAR.", 
+    "Este apartamento en Rosales es más que una compra: es una oportunidad para crear tu espacio soñado o duplicar tu inversión. ¿Quieres conocer el proyecto?",
+    "Precio competitivo por m², con una UBICACION TOP, en uno de los sectores más exclusivos de Bogotá. Con 247 m² de amplitud, ofrece el espacio ideal para una remodelación que maximice su valor y lo convierta en una verdadera joya en el mercado inmobiliario premium.",
+    "Lo que lo hace atractivo para inversionistas y compradores visionarios:\n",
+    "✔️Potencial de valorización: inmuebles en este sector remodelados alcanzan precios muy superiores.",
+    "✔️Espacios amplios y versátiles, perfectos para rediseñar con un estilo moderno y exclusivo",
+    "✔️Edificio sólido y tradicional, con baja densidad, que asegura privacidad y exclusividad.",
+    "✔️Ubicación estratégica: a media cuadra de la Carrera 7 y cerca a la Av circunvalar, cerca de la zona financiera, universidades, restaurantes y servicios top de la ciudad.",
+    "✔️Excelente conectividad en una de las zonas más cotizadas de Bogotá.\n",
+    "Este apartamento no solo es un lugar para vivir, sino una inversión inteligente, en uno de los sectores con mayor prestigio y demanda de la ciudad."
+    ]
     "fotos": ["images/propiedades/4/principal-1.png", "images/propiedades/4/principal-2.jpg", "images/propiedades/4/principal-3.jpg", "images/propiedades/4/principal-4.jpg", "images/propiedades/4/principal-5.jpg", "images/propiedades/4/principal-6.jpg",
     "images/propiedades/4/principal-7.jpg", "images/propiedades/4/principal-8.jpg", "images/propiedades/4/principal-9.jpg", "images/propiedades/4/principal-10.jpg", "images/propiedades/4/principal-11.jpg", 
     "images/propiedades/4/principal-12.png", "images/propiedades/4/principal-13.jpg", "images/propiedades/4/principal-15.jpg", "images/propiedades/4/principal-16.jpg", "images/propiedades/4/principal-17.jpg"],
-    "caracteristicasExternas": ["Cocina tipo americana", "Pisos en porcelanato", "Remodelación reciente", "Closets empotrados", "Parqueadero visitantes", "Disponible de inmediato"],
-    "caracteristicasInternas": []
+    "caracteristicasExternas": ["Centros Comerciales", "Trans. público cercano", "Luz en la tarde", "Cerca zona urbana", "Zona residencial", "Ubicación exterior", "Colegios / Universidades", "Cerca a restaurantes"],
+    "caracteristicasInternas": ["Baño auxiliar", "Clósets", "Hall de alcobas", "Baño de habitación principal", "Zona de lavandería", "Inmueble de lujo", "Biblioteca/Estudio", "Chimenea"]
   },
   {
     "id": 5,
