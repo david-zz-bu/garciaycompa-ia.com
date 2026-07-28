@@ -62,6 +62,9 @@ function renderizarDetalle(p) {
   const adminHtml = p.administracion
     ? `<div class="admin-inmueble">Administración: ${formatoPrecioDetalle(p.administracion)}/mes</div>`
     : "";
+  const tour360Html = p.tour360
+  ? `<a href="${p.tour360}" target="_blank" class="btn-tour360"><i class="bi bi-arrows-fullscreen"></i> Ver tour 360°</a>`
+  : "";
 
   const listaCaracteristicas = (p.caracteristicas && p.caracteristicas.length)
     ? `<h3 class="titulo-caracteristicas mt-4 mb-3">Características</h3>
@@ -74,6 +77,7 @@ function renderizarDetalle(p) {
     <div class="row g-5">
       <div class="col-lg-7">
         <div class="galeria-grid">${tilesHtml}</div>
+        ${tour360Html}
         ${listaCaracteristicas}
       </div>
       <div class="col-lg-5">
