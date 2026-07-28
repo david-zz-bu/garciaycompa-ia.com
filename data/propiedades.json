@@ -79,8 +79,10 @@
     "images/propiedades/3/principal-46.jpg", "images/propiedades/3/principal-47.jpg", "images/propiedades/3/principal-48.jpg", "images/propiedades/3/principal-49.jpg", "images/propiedades/3/principal-50.jpg",
     "images/propiedades/3/principal-51.jpg", "images/propiedades/3/principal-52.jpg", "images/propiedades/3/principal-53.jpg", "images/propiedades/3/principal-54.jpg", "images/propiedades/3/principal-55.jpg",
     "images/propiedades/3/principal-56.jpg"],
-    "caracteristicas": ["Árboles frutales", "Espacio para piscina", "Zona apta para caballerizas", "Vía pavimentada", "Cerca perimetral", "Pozo de agua propio"]
-  },
+    "caracteristicas": ["Agua", "Barra estilo americano", "Cocina equipada", "Hall de alcobas", "Armarios Empotrados", "Biblioteca/Estudio", "Doble ventana", 
+    "Suelo de cerámica/ mármol", "Baño en habitación principal"
+    ]
+   },
   {
     "id": 4,
     "titulo": "APARTAMENTO EN VENTA, ROSALES, PARA REMODELAR - UBICACIÓN TOP",
