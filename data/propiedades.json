@@ -127,7 +127,7 @@
     "titulo": "VENTA - CASA CAMPESTRE EXCLUSIVA EN CÁJICA - CON CABAÑA INDEPENDIENTE",
     "ciudad": "Cajicá",
     "barrio": "Calahorra",
-    "codigo": "9598043"
+    "codigo": "9598043",
     "estrato": 2,
     "antiguedad": 2015,
     "tipo": "Casa Campestre",
@@ -144,7 +144,8 @@
     "images/propiedades/5/principal-6.jpg", "images/propiedades/5/principal-7.jpg", "images/propiedades/5/principal-8.jpg", "images/propiedades/5/principal-9.jpg", "images/propiedades/5/principal-10.jpg", 
     "images/propiedades/5/principal-11.jpg", "images/propiedades/5/principal-12.jpg", "images/propiedades/5/principal-13.jpg", "images/propiedades/5/principal-14.jpg", "images/propiedades/5/principal-15.jpg",
     "images/propiedades/5/principal-16.jpg", "images/propiedades/5/principal-17.jpg", "images/propiedades/5/principal-18.jpg", "images/propiedades/5/principal-19.jpg", "images/propiedades/5/principal-20.jpg"],
-    "caracteristicas": ["Lote esquinero", "Servicios públicos en el frente", "Apto para unifamiliar o bifamiliar", "Topografía plana", "Vía de acceso pavimentada"]
+    "caracteristicasInternas": ["Lote esquinero", "Servicios públicos en el frente", "Apto para unifamiliar o bifamiliar", "Topografía plana", "Vía de acceso pavimentada"],
+    "caracteristicasExternas": [""]
   },
   {
     "id": 6,
