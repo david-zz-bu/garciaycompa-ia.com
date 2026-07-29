@@ -445,6 +445,12 @@ section{ padding:5rem 0; }
   color:var(--piedra);
   margin-bottom:.5rem;
 }
+.precio-arriendo-extra{
+  font-size:.85rem;
+  color:var(--verde-sabana-oscuro);
+  font-weight:500;
+  margin-bottom:.3rem;
+}
 .precio-detalle{
   font-family:'JetBrains Mono', monospace;
   font-size:1.7rem;
