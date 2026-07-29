@@ -243,7 +243,7 @@
     "banos": 2,
     "area_m2": 79.51,
     "color": "#cfc8b6",
-    "imagen": "no-image-available",
+    "imagen": "images/propiedades/8/no-disponible",
     "descripcion": ["Este acogedor apartamento DUPLEX tiene excelente distribución, iluminación y seguridad, ademas de su ubicacion estrategica a media cuadra de la Carrera 7, tendrás fácil acceso al transporte público,",
     "colegios, universidades y el centro comercial Codabas.\n",
     "✅ Dúplex con espacios cómodos y bien distribuidos",
@@ -254,7 +254,7 @@
     "Ubicado en una zona con alta demanda residencial en el norte de Bogotá, combina seguridad, conectividad y potencial de valorización, ideal para un perfil inversionista conservador o familia.\n",
     "NEGOCIABLE"
     ],
-    "fotos": ["#cfc8b6", "#c9c2b3", "#b0a288"],
+    "fotos": ["images/propiedades/8/no-disponible", "", ""],
     "caracteristicas": ["Patio trasero techado", "Cocina independiente", "Sector residencial tranquilo", "Parqueadero techado", "Cerca a colegios y comercio"]
   },
   {
