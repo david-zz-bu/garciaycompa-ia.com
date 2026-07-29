@@ -82,7 +82,7 @@ function aplicarFiltros() {
 
   const filtradas = TODAS_LAS_PROPIEDADES.filter(p => {
     if (ciudad && p.ciudad !== ciudad) return false;
-    if (tipo && p.tipo !== tipo) return false;
+    if (negocio && !p.negocio.includes(negocio)) return false;
     if (negocio && p.negocio !== negocio) return false;
     if (alcobas && p.alcobas < alcobas) return false;
     if (precioDesde && p.precio < precioDesde) return false;
