@@ -172,22 +172,27 @@
     "precio": 1300000000,
     "alcobas": 5,
     "banos": 3,
-    "parqueadero":6,
+    "parqueaderos":6,
     "area_m2": 662.23,
     "area_construida": 270,
     "color": "#9d9584",
-    "imagen": "",
+    "imagen": "images/propiedades/6/principal-1.jpg",
     "descripcion": ["Imagina despertar rodeado de naturaleza, con el aire puro de la montaña y la tranquilidad de estar a solo 1.5 km del casco histórico de Villa de Leyva.",
     "Esta propiedad te ofrece el balance perfecto: paz y privacidad en un entorno campestre, con la comodidad de tener restaurantes, actividades turísticas y estar muy cerca a los Pozos Azules.\n\n",
     "Aquí no solo adquieres un inmueble, sino un espacio para crear experiencias: tardes en familia en las zonas verdes, noches seguras gracias a su sistema de vigilancia, y la posibilidad de",
     "transformar la casa en un negocio turístico rentable, gracias a su ubicación estratégica en la ruta principal hacia el pueblo.\n\n",
     "Ideal para quienes buscan invertir con plusvalía o disfrutar de un estilo de vida campestre con todas las comodidades modernas: internet, agua caliente y acceso vehicular directo."
     ],
-    "fotos": ["#9d9584", "#8f9a93", "#a8a191"],
+    "fotos": ["images/propiedades/6/principal-1.jpg", "images/propiedades/6/principal-2.jpg", "images/propiedades/6/principal-3.jpg", "images/propiedades/6/principal-4.jpg", "images/propiedades/6/principal-5.jpg",
+    "images/propiedades/6/principal-6.jpg", "images/propiedades/6/principal-7.jpg", "images/propiedades/6/principal-8.jpg", "images/propiedades/6/principal-9.jpg", "images/propiedades/6/principal-10.jpg",
+    "images/propiedades/6/principal-11.jpg", "images/propiedades/6/principal-12.jpg", "images/propiedades/6/principal-13.jpg", "images/propiedades/6/principal-14.jpg", "images/propiedades/6/principal-15.jpg",
+    "images/propiedades/6/principal-16.jpg", "images/propiedades/6/principal-17.jpg", "images/propiedades/6/principal-18.jpg"
+    ],        
     "caracteristicasInternas": ["Agua", "Baño en habitación principal", "Cocina equipada", "Depósito", "Jacuzzi", "Zona de lavandería", "Lavaplatos", "Balcón", "Barra estilo americano",
     "Cocina tipo americano", "Despensa", "Unifamiliar","Chimenea", "Baño auxiliar", "Calentador", "Comedor auxiliar", "Electricidad", "Vista panorámica", "Hoespedaje Turismo" 
     ],
-    "caracteristicasExternas": ["Acceso pavimentado", "Jardín"]
+    "caracteristicasExternas": ["Acceso pavimentado", "Jardín", "Zona campestre", "Áreas Turísticas", "Vivienda unifamiliar", "Barbacoa/Parrilla/Quincho", "Parqueadero visitantes",
+    "Zona residencial", "Sobre vía principal", "Cerca zona urbana", "Terraza", "Zonas verdes", "Tanques de Agua"]
   },
   {
     "id": 7,
