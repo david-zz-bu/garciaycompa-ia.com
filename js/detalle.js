@@ -71,6 +71,9 @@ function renderizarDetalle(p) {
   const adminHtml = p.administracion
     ? `<div class="admin-inmueble">Administración: ${formatoPrecioDetalle(p.administracion)}/mes</div>`
     : "";
+  const precioArriendoHtml = p.precio_arriendo
+  ? `<div class="precio-arriendo-extra">También disponible en arriendo: ${formatoPrecioDetalle(p.precio_arriendo)}/mes</div>`
+  : "";
   const tour360Html = p.tour360
   ? `<a href="${p.tour360}" target="_blank" class="btn-tour360"><i class="bi bi-arrows-fullscreen"></i> Ver tour 360°</a>`
   : "";
@@ -100,6 +103,7 @@ function renderizarDetalle(p) {
         <div class="eyebrow-sec mb-2">${p.ciudad} · ${p.barrio}</div>
         ${codigoHtml}
         <div class="precio-detalle mb-1">${formatoPrecioDetalle(p.precio)}${etiquetaNegocio}</div>
+        ${precioArriendoHtml}
         ${adminHtml}
         <div class="tag-negocio-detalle mb-4 mt-2">${p.negocio}</div>
         <div class="row g-3 mb-4 ficha-tecnica">
