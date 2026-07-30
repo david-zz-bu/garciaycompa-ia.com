@@ -109,9 +109,7 @@ function inicializarBuscador() {
       const contenedor = document.getElementById("resultados-propiedades");
       if (contenedor) {
         contenedor.innerHTML = `<div class="col-12"><p class="sin-resultados">
-          No se pudieron cargar las propiedades. Si estás probando el sitio abriendo el archivo
-          directamente en el navegador (file://), necesitas un servidor local (ej. <code>python -m http.server</code>)
-          para que la carga del JSON funcione — una vez el sitio esté publicado en un hosting normal, esto no será problema.
+          No se pudieron cargar las propiedades. 
         </p></div>`;
       }
     });
