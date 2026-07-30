@@ -292,21 +292,5 @@
     "images/propiedades/9/principal-16.jpg", "images/propiedades/9/principal-17.jpg", "images/propiedades/9/principal-18.jpg"],
     "caracteristicas": [""]
   },
-  {
-    "id": 10,
-    "titulo": "Casa campestre en Chivatá",
-    "ciudad": "Chivatá",
-    "barrio": "San Juan",
-    "tipo": "Campestre",
-    "negocio": "Venta",
-    "precio": 1050000000,
-    "alcobas": 3,
-    "banos": 4,
-    "area_m2": 271.86,
-    "color": "#a8a191",
-    "imagen": "",
-    "descripcion": "Casa campestre en Chivatá, Boyacá, con amplios espacios sociales y zonas verdes propias. Buena opción para quienes buscan una segunda vivienda fuera de la Sabana de Bogotá.",
-    "fotos": ["#a8a191", "#9d9584", "#b0a288"],
-    "caracteristicas": ["Garaje para 2 vehículos", "Zonas verdes propias", "Vía de acceso pavimentada", "Espacios sociales amplios"]
-  }
+
 ]
