@@ -1,19 +1,21 @@
 // ============================================================
 // Página de detalle de propiedad.
-// Lee ?id=X de la URL, busca esa propiedad en propiedades.json
+// Lee ?id=X de la URL, busca esa propiedad en Supabase
 // y arma el contenido dinámicamente. No existe un archivo HTML
 // por propiedad: esta misma plantilla sirve para todas.
 // ============================================================
 
 const MAX_FOTOS_GRID = 6;
+const COLOR_FALLBACK = "#c9c2b3";
 let FOTOS_ACTUALES = [];
 let INDICE_LIGHTBOX = 0;
 
-function textoDescripcion(descripcion) {
-  if (Array.isArray(descripcion)) {
-    return descripcion.join("\n");
-  }
-  return descripcion || "";
+function htmlDescripcion(descripcion) {
+  const parrafos = Array.isArray(descripcion) ? descripcion : [descripcion || ""];
+  return parrafos
+    .filter(Boolean)
+    .map(p => `<p class="descripcion-propiedad">${p}</p>`)
+    .join("");
 }
 
 function formatoPrecioDetalle(valor) {
@@ -37,8 +39,13 @@ function renderizarDetalle(p) {
   document.getElementById("titulo-pagina").textContent = `${p.titulo} | García & Compañía`;
   document.getElementById("detalle-titulo").textContent = p.titulo;
 
-  const etiquetaNegocio = p.negocio === "Arriendo" ? "/mes" : "";
-  FOTOS_ACTUALES = (p.fotos && p.fotos.length ? p.fotos : [p.color || "#c9c2b3"]);
+  const tiposNegocio = p.tipo_negocio || [];
+  const etiquetaNegocioTexto = tiposNegocio
+    .map(t => t.charAt(0).toUpperCase() + t.slice(1))
+    .join(" / ");
+  const etiquetaSufijo = tiposNegocio.includes("arriendo") && !tiposNegocio.includes("venta") ? "/mes" : "";
+
+  FOTOS_ACTUALES = (p.fotos && p.fotos.length ? p.fotos : [COLOR_FALLBACK]);
 
   const visibles = FOTOS_ACTUALES.slice(0, MAX_FOTOS_GRID);
   const restantes = FOTOS_ACTUALES.length - MAX_FOTOS_GRID;
@@ -50,11 +57,11 @@ function renderizarDetalle(p) {
 
   // Ficha técnica: m² siempre se muestra; el resto solo si el dato existe
   const itemsFicha = [
-    { num: p.area_m2.toLocaleString("es-CO"), label: "m²" }
+    { num: Number(p.area).toLocaleString("es-CO"), label: "m²" }
   ];
-  if (p.alcobas > 0) itemsFicha.push({ num: p.alcobas, label: "Alcobas" });
+  if (p.habitaciones > 0) itemsFicha.push({ num: p.habitaciones, label: "Alcobas" });
   if (p.banos > 0) itemsFicha.push({ num: p.banos, label: "Baños" });
-  if (p.area_construida) itemsFicha.push({ num: p.area_construida.toLocaleString("es-CO"), label: "m² construidos" });
+  if (p.area_construida) itemsFicha.push({ num: Number(p.area_construida).toLocaleString("es-CO"), label: "m² construidos" });
   if (p.parqueaderos) itemsFicha.push({ num: p.parqueaderos, label: "Parqueaderos" });
   if (p.estrato) itemsFicha.push({ num: p.estrato, label: "Estrato" });
   if (p.antiguedad) itemsFicha.push({ num: p.antiguedad, label: "Año construcción" });
@@ -72,24 +79,31 @@ function renderizarDetalle(p) {
     ? `<div class="admin-inmueble">Administración: ${formatoPrecioDetalle(p.administracion)}/mes</div>`
     : "";
   const precioArriendoHtml = p.precio_arriendo
-  ? `<div class="precio-arriendo-extra">También disponible en arriendo: ${formatoPrecioDetalle(p.precio_arriendo)}/mes</div>`
-  : "";
+    ? `<div class="precio-arriendo-extra">También disponible en arriendo: ${formatoPrecioDetalle(p.precio_arriendo)}/mes</div>`
+    : "";
   const tour360Html = p.tour360
-  ? `<a href="${p.tour360}" target="_blank" class="btn-tour360"><i class="bi bi-arrows-fullscreen"></i> Ver tour 360°</a>`
-  : "";
+    ? `<a href="${p.tour360}" target="_blank" class="btn-tour360"><i class="bi bi-arrows-fullscreen"></i> Ver tour 360°</a>`
+    : "";
 
-  const listaCaracteristicasExternas = (p.caracteristicasExternas && p.caracteristicasExternas.length)
+  // Mapa de ubicación — solo se muestra si la propiedad ya tiene lat/lng cargados
+  const mapaHtml = (p.lat && p.lng)
+    ? `<h3 class="titulo-caracteristicas mt-4 mb-3">Ubicación</h3>
+       <iframe width="100%" height="350" style="border:0; border-radius:8px;" loading="lazy"
+         src="https://www.google.com/maps?q=${p.lat},${p.lng}&output=embed"></iframe>`
+    : "";
+
+  const listaCaracteristicasExternas = (p.caracteristicas_externas && p.caracteristicas_externas.length)
     ? `<h3 class="titulo-caracteristicas mt-4 mb-3">Características Externas</h3>
        <ul class="lista-caracteristicas">
-         ${p.caracteristicasExternas.map(c => `<li><i class="bi bi-check2"></i>${c}</li>`).join("")}
+         ${p.caracteristicas_externas.map(c => `<li><i class="bi bi-check2"></i>${c}</li>`).join("")}
        </ul>`
     : "";
-  const listaCaracteristicasInternas = (p.caracteristicasInternas && p.caracteristicasInternas.length)
+  const listaCaracteristicasInternas = (p.caracteristicas_internas && p.caracteristicas_internas.length)
     ? `<h3 class="titulo-caracteristicas mt-4 mb-3">Características Internas</h3>
        <ul class="lista-caracteristicas">
-         ${p.caracteristicasInternas.map(c => `<li><i class="bi bi-check2"></i>${c}</li>`).join("")}
+         ${p.caracteristicas_internas.map(c => `<li><i class="bi bi-check2"></i>${c}</li>`).join("")}
        </ul>`
-    : "";  
+    : "";
 
   document.getElementById("detalle-contenido").innerHTML = `
     <div class="row g-5">
@@ -98,19 +112,20 @@ function renderizarDetalle(p) {
         ${tour360Html}
         ${listaCaracteristicasExternas}
         ${listaCaracteristicasInternas}
+        ${mapaHtml}
       </div>
       <div class="col-lg-5">
-        <div class="eyebrow-sec mb-2">${p.ciudad} · ${p.barrio}</div>
+        <div class="eyebrow-sec mb-2">${p.ciudad}${p.barrio ? " · " + p.barrio : ""}</div>
         ${codigoHtml}
-        <div class="precio-detalle mb-1">${formatoPrecioDetalle(p.precio)}${etiquetaNegocio}</div>
+        <div class="precio-detalle mb-1">${formatoPrecioDetalle(p.precio)}${etiquetaSufijo}</div>
         ${precioArriendoHtml}
         ${adminHtml}
-        <div class="tag-negocio-detalle mb-4 mt-2">${p.negocio}</div>
+        <div class="tag-negocio-detalle mb-4 mt-2">${etiquetaNegocioTexto}</div>
         <div class="row g-3 mb-4 ficha-tecnica">
           ${fichaTecnicaHtml}
         </div>
-        <p class="descripcion-propiedad">${textoDescripcion(p.descripcion)}</p>
-        <a href="https://wa.me/57" target="_blank" class="btn btn-primario w-100 mt-3">Preguntar por esta propiedad</a>
+        ${htmlDescripcion(p.descripcion)}
+        <a href="https://wa.me/573128078855" target="_blank" class="btn btn-primario w-100 mt-3">Preguntar por esta propiedad</a>
       </div>
     </div>`;
 
@@ -182,7 +197,7 @@ function mostrarNoEncontrada() {
     <a href="propiedades.html">Volver al listado completo</a>.</p>`;
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
   const params = new URLSearchParams(window.location.search);
   const id = parseInt(params.get("id"), 10);
 
@@ -191,15 +206,16 @@ document.addEventListener("DOMContentLoaded", function () {
     return;
   }
 
-  fetch("data/propiedades.json")
-    .then(resp => resp.json())
-    .then(datos => {
-      const propiedad = datos.find(p => p.id === id);
-      if (propiedad) {
-        renderizarDetalle(propiedad);
-      } else {
-        mostrarNoEncontrada();
-      }
-    })
-    .catch(() => mostrarNoEncontrada());
+  const { data: propiedad, error } = await supabaseClient
+    .from("propiedades")
+    .select("*")
+    .eq("id", id)
+    .single();
+
+  if (error || !propiedad) {
+    mostrarNoEncontrada();
+    return;
+  }
+
+  renderizarDetalle(propiedad);
 });
