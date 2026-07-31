@@ -25,6 +25,33 @@ h1,h2,h3,.font-display{
   font-family:'JetBrains Mono', monospace;
 }
 
+/* ---------- Etiqueta de estado (vendido/arrendado/reservado) ---------- */
+.tag-estado{
+  position:absolute;
+  top:.9rem;
+  left:50%;
+  transform:translateX(-50%);
+  font-family:'JetBrains Mono', monospace;
+  font-size:.72rem;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  padding:.3rem .8rem;
+  border-radius:2px;
+  font-weight:600;
+  color:var(--crema);
+  z-index:2;
+}
+.tag-estado-vendido{ background:var(--carbon); }
+.tag-estado-arrendado{ background:var(--ladrillo); }
+.tag-estado-reservado{ background:var(--piedra); }
+
+.tag-estado-detalle{
+  position:static;
+  transform:none;
+  display:inline-block;
+  margin-bottom:.75rem;
+}
+
 /* ---------- Horizonte: motivo de silueta de cerros ---------- */
 .horizonte{
   display:block;
