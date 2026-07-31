@@ -72,18 +72,18 @@
             <option value="">Todos</option>
             <option value="Casa">Casa</option>
             <option value="Apartamento">Apartamento</option>
-            <option value="Campestre">Campestre</option>
+            <option value="Casa Campestre">Casa Campestre</option>
             <option value="Lote terreno">Lote terreno</option>
             <option value="Oficina">Oficina</option>
-            <option value="Terreno">Terreno</option>
           </select>
         </div>
         <div class="col-6 col-md-4 col-lg-2">
           <label>Tipo de negocio</label>
           <select id="f-negocio" class="form-select">
             <option value="">Todos</option>
-            <option value="Venta">Venta</option>
-            <option value="Arriendo">Arriendo</option>
+            <option value="venta">Venta</option>
+            <option value="arriendo">Arriendo</option>
+            <option value="permuta">Permuta</option>
           </select>
         </div>
         <div class="col-6 col-md-4 col-lg-2">
@@ -122,7 +122,7 @@
       <span id="contador-resultados" class="contador-resultados"></span>
     </div>
     <div class="row g-4" id="resultados-propiedades">
-      <!-- Las tarjetas se generan dinámicamente desde data/propiedades.json -->
+      <!-- Las tarjetas se generan dinámicamente desde Supabase -->
     </div>
   </div>
 </section>
@@ -176,6 +176,9 @@
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
 <script src="js/buscador.js"></script>
 </body>
 </html>
+
