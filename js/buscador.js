@@ -17,10 +17,8 @@ function etiquetaEstado(estado) {
 }
 
 function tarjetaPropiedad(p) {
-  const portada = p.fotos && p.fotos.length > 0 ? p.fotos[0] : null;
-  const fondo = portada
-    ? `background-image:url('${portada}'); background-size:cover; background-position:center;`
-    : `background-color:#c9c2b3;`;
+  const portada = p.fotos && p.fotos.length > 0 ? p.fotos[0] : "images/no-image-available.jpg";
+  const fondo = `background-image:url('${portada}'); background-size:cover; background-position:center;`;
 
   const detalleHabitacionesBanos = (p.habitaciones > 0 || p.banos > 0)
     ? `<span>${p.habitaciones} hab · ${p.banos} baños</span>`
