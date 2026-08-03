@@ -290,6 +290,11 @@ document.getElementById("form-propiedad").addEventListener("submit", async (e) =
       progresoBox.classList.add("oculto");
     }
 
+    // Si no se subió ninguna foto, usar la imagen genérica de "no disponible"
+    if (fotosFinal.length === 0) {
+      fotosFinal = ["images/no-disponible.png"];
+    }
+
     const { error: errorActualizar } = await supabaseClient
       .from("propiedades")
       .update({ ...datosBase, fotos: fotosFinal })
