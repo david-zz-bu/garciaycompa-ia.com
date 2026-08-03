@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/estilo.css">
+<title>Panel de administración | García &amp; Compañía</title>
+<style>
+  /* Estilos propios del panel — no afecta el resto del sitio */
+  body{ background:var(--crema); }
+  .panel-header{
+    background:var(--verde-sabana-oscuro);
+    color:var(--crema);
+    padding:1.5rem 0;
+    margin-bottom:2rem;
+  }
+  .panel-header h1{ font-size:1.4rem; margin:0; }
+  .caja-login{
+    max-width:380px;
+    margin:5rem auto;
+    background:#fff;
+    border:1px solid rgba(42,38,34,.08);
+    border-radius:6px;
+    padding:2.5rem;
+  }
+  .caja-panel{
+    background:#fff;
+    border:1px solid rgba(42,38,34,.08);
+    border-radius:6px;
+    padding:2rem;
+    margin-bottom:2rem;
+  }
+  .fila-propiedad{
+    display:flex;
+    align-items:center;
+    gap:1rem;
+    padding:.9rem 0;
+    border-bottom:1px solid rgba(42,38,34,.08);
+  }
+  .fila-propiedad img{
+    width:70px; height:52px;
+    object-fit:cover;
+    border-radius:4px;
+    background:#eee;
+  }
+  .fila-propiedad .info{ flex:1; }
+  .fila-propiedad .info .titulo{ font-weight:600; font-size:.92rem; }
+  .fila-propiedad .info .meta{ font-size:.8rem; color:var(--piedra); }
+  .miniatura-subida{
+    width:80px; height:60px;
+    object-fit:cover;
+    border-radius:4px;
+    margin:.3rem;
+  }
+  .oculto{ display:none !important; }
+  .msg-error{ color:#b23b3b; font-size:.85rem; margin-top:.5rem; }
+  .msg-ok{ color:#3b7a4a; font-size:.85rem; margin-top:.5rem; }
+</style>
+</head>
+<body>
+
+<!-- ============ LOGIN ============ -->
+<div id="vista-login" class="caja-login">
+  <h2 class="mb-4" style="color:var(--verde-sabana-oscuro); font-size:1.3rem;">Panel de administración</h2>
+  <form id="form-login">
+    <div class="mb-3">
+      <label class="form-label">Correo</label>
+      <input type="email" id="login-email" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Contraseña</label>
+      <input type="password" id="login-password" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primario w-100" style="background:var(--verde-sabana-oscuro); color:#fff;">Entrar</button>
+    <div id="login-error" class="msg-error oculto"></div>
+  </form>
+</div>
+
+<!-- ============ PANEL (visible solo tras iniciar sesión) ============ -->
+<div id="vista-panel" class="oculto">
+  <div class="panel-header">
+    <div class="container d-flex justify-content-between align-items-center">
+      <h1>García &amp; Compañía — Panel de administración</h1>
+      <button id="btn-logout" class="btn btn-sm btn-secundario" style="border-color:rgba(255,255,255,.5); color:#fff;">Cerrar sesión</button>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- Listado de propiedades -->
+    <div class="caja-panel">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h3 style="color:var(--verde-sabana-oscuro); font-size:1.1rem;">Propiedades</h3>
+        <button id="btn-nueva-propiedad" class="btn btn-primario" style="background:var(--verde-sabana-oscuro); color:#fff;">
+          <i class="bi bi-plus-lg"></i> Nueva propiedad
+        </button>
+      </div>
+      <div id="listado-propiedades"><!-- se llena por JS --></div>
+    </div>
+
+    <!-- Formulario de agregar/editar (oculto hasta que se necesite) -->
+    <div id="caja-formulario" class="caja-panel oculto">
+      <h3 id="titulo-formulario" style="color:var(--verde-sabana-oscuro); font-size:1.1rem;" class="mb-3">Nueva propiedad</h3>
+      <form id="form-propiedad">
+        <input type="hidden" id="f-id">
+
+        <div class="row g-3 mb-3">
+          <div class="col-md-8">
+            <label class="form-label">Título</label>
+            <input type="text" id="f-titulo" class="form-control" required>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Código</label>
+            <input type="text" id="f-codigo" class="form-control">
+          </div>
+        </div>
+
+        <div class="row g-3 mb-3">
+          <div class="col-md-4">
+            <label class="form-label">Ciudad</label>
+            <input type="text" id="f-ciudad" class="form-control" required>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Barrio</label>
+            <input type="text" id="f-barrio" class="form-control">
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Estrato</label>
+            <input type="number" id="f-estrato" class="form-control">
+          </div>
+        </div>
+
+        <div class="row g-3 mb-3">
+          <div class="col-md-4">
+            <label class="form-label">Tipo de inmueble</label>
+            <select id="f-tipo" class="form-select" required>
+              <option value="Casa">Casa</option>
+              <option value="Apartamento">Apartamento</option>
+              <option value="Casa Campestre">Casa Campestre</option>
+              <option value="Lote terreno">Lote terreno</option>
+              <option value="Oficina">Oficina</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Tipo de negocio</label>
+            <div class="d-flex gap-3 mt-2">
+              <div class="form-check"><input class="form-check-input" type="checkbox" value="venta" id="f-negocio-venta"><label class="form-check-label" for="f-negocio-venta">Venta</label></div>
+              <div class="form-check"><input class="form-check-input" type="checkbox" value="arriendo" id="f-negocio-arriendo"><label class="form-check-label" for="f-negocio-arriendo">Arriendo</label></div>
+              <div class="form-check"><input class="form-check-input" type="checkbox" value="permuta" id="f-negocio-permuta"><label class="form-check-label" for="f-negocio-permuta">Permuta</label></div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Estado</label>
+            <select id="f-estado" class="form-select">
+              <option value="disponible">Disponible</option>
+              <option value="vendido">Vendido</option>
+              <option value="arrendado">Arrendado</option>
+              <option value="reservado">Reservado</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row g-3 mb-3">
+          <div class="col-md-4">
+            <label class="form-label">Precio de venta</label>
+            <input type="number" id="f-precio" class="form-control">
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Precio de arriendo (si aplica)</label>
+            <input type="number" id="f-precio-arriendo" class="form-control">
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Administración (si aplica)</label>
+            <input type="number" id="f-administracion" class="form-control">
+          </div>
+        </div>
+
+        <div class="row g-3 mb-3">
+          <div class="col-md-3"><label class="form-label">Área total (m²)</label><input type="number" step="0.01" id="f-area" class="form-control" required></div>
+          <div class="col-md-3"><label class="form-label">Área construida (m²)</label><input type="number" step="0.01" id="f-area-construida" class="form-control"></div>
+          <div class="col-md-3"><label class="form-label">Habitaciones</label><input type="number" id="f-habitaciones" class="form-control" value="0"></div>
+          <div class="col-md-3"><label class="form-label">Baños</label><input type="number" id="f-banos" class="form-control" value="0"></div>
+        </div>
+
+        <div class="row g-3 mb-3">
+          <div class="col-md-3"><label class="form-label">Parqueaderos</label><input type="number" id="f-parqueaderos" class="form-control" value="0"></div>
+          <div class="col-md-3"><label class="form-label">Pisos</label><input type="number" id="f-pisos" class="form-control"></div>
+          <div class="col-md-3"><label class="form-label">Año construcción</label><input type="number" id="f-antiguedad" class="form-control"></div>
+          <div class="col-md-3">
+            <label class="form-label">¿Destacada en el inicio?</label>
+            <div class="form-check mt-2">
+              <input class="form-check-input" type="checkbox" id="f-destacada">
+              <label class="form-check-label" for="f-destacada">Sí, mostrar</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Descripción (un párrafo por línea)</label>
+          <textarea id="f-descripcion" class="form-control" rows="5"></textarea>
+        </div>
+
+        <div class="row g-3 mb-3">
+          <div class="col-md-6">
+            <label class="form-label">Características internas (separadas por coma)</label>
+            <input type="text" id="f-caracteristicas-internas" class="form-control" placeholder="Cocina integral, Clósets, Chimenea">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Características externas (separadas por coma)</label>
+            <input type="text" id="f-caracteristicas-externas" class="form-control" placeholder="Piscina, Zona BBQ, Jardín">
+          </div>
+        </div>
+
+        <div class="row g-3 mb-3">
+          <div class="col-md-6">
+            <label class="form-label">Latitud</label>
+            <input type="number" step="0.000001" id="f-lat" class="form-control">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Longitud</label>
+            <input type="number" step="0.000001" id="f-lng" class="form-control">
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Link del tour 360° (opcional)</label>
+          <input type="url" id="f-tour360" class="form-control" placeholder="https://...">
+        </div>
+
+        <!-- Subida de fotos -->
+        <div class="mb-4">
+          <label class="form-label">Fotos</label>
+          <input type="file" id="f-fotos-nuevas" class="form-control" accept="image/*" multiple>
+          <div id="previsualizacion-fotos" class="d-flex flex-wrap mt-2"></div>
+          <div id="subida-progreso" class="msg-ok oculto">Subiendo fotos...</div>
+        </div>
+
+        <div class="d-flex gap-2">
+          <button type="submit" class="btn btn-primario" style="background:var(--verde-sabana-oscuro); color:#fff;">Guardar propiedad</button>
+          <button type="button" id="btn-cancelar-form" class="btn btn-secundario" style="border-color:var(--piedra); color:var(--piedra);">Cancelar</button>
+        </div>
+        <div id="form-error" class="msg-error oculto"></div>
+        <div id="form-ok" class="msg-ok oculto"></div>
+      </form>
+    </div>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
