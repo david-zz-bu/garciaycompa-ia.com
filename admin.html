@@ -55,6 +55,31 @@
     border-radius:4px;
     margin:.3rem;
   }
+  .miniatura-wrap{
+    position:relative;
+    display:inline-block;
+    margin:.3rem;
+  }
+  .miniatura-wrap .miniatura-subida{ margin:0; display:block; }
+  .btn-borrar-foto{
+    position:absolute;
+    top:-6px;
+    right:-6px;
+    width:22px;
+    height:22px;
+    border-radius:50%;
+    background:#b23b3b;
+    color:#fff;
+    border:2px solid #fff;
+    font-size:.8rem;
+    line-height:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    padding:0;
+  }
+  .btn-borrar-foto:hover{ background:#8a2c2c; }
   .oculto{ display:none !important; }
   .msg-error{ color:#b23b3b; font-size:.85rem; margin-top:.5rem; }
   .msg-ok{ color:#3b7a4a; font-size:.85rem; margin-top:.5rem; }
@@ -98,6 +123,7 @@
           <i class="bi bi-plus-lg"></i> Nueva propiedad
         </button>
       </div>
+      <input type="text" id="buscador-admin" class="form-control mb-3" placeholder="Buscar por título o ciudad...">
       <div id="listado-propiedades"><!-- se llena por JS --></div>
     </div>
 
