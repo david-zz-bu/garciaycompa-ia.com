@@ -29,15 +29,15 @@ h1,h2,h3,.font-display{
 .tag-estado{
   position:absolute;
   top:1.2rem;
-  left:-2.2rem;
-  width:150px;
+  left:-2.8rem;
+  width:180px;
   text-align:center;
   transform:rotate(-45deg);
   font-family:'JetBrains Mono', monospace;
-  font-size:.9rem;
+  font-size:1.1rem;
   letter-spacing:.08em;
   text-transform:uppercase;
-  padding:.4rem 0;
+  padding:.55rem 0;
   font-weight:700;
   color:var(--crema);
   z-index:2;
