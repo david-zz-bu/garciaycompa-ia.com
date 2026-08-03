@@ -6,7 +6,7 @@
 // ============================================================
 
 const MAX_FOTOS_GRID = 6;
-const COLOR_FALLBACK = "#c9c2b3";
+const IMAGEN_FALLBACK = "images/no-image-available.jpg";
 let FOTOS_ACTUALES = [];
 let INDICE_LIGHTBOX = 0;
 
@@ -52,7 +52,7 @@ function renderizarDetalle(p) {
     .join(" / ");
   const etiquetaSufijo = tiposNegocio.includes("arriendo") && !tiposNegocio.includes("venta") ? "/mes" : "";
 
-  FOTOS_ACTUALES = (p.fotos && p.fotos.length ? p.fotos : [COLOR_FALLBACK]);
+  FOTOS_ACTUALES = (p.fotos && p.fotos.length ? p.fotos : [IMAGEN_FALLBACK]);
 
   const visibles = FOTOS_ACTUALES.slice(0, MAX_FOTOS_GRID);
   const restantes = FOTOS_ACTUALES.length - MAX_FOTOS_GRID;
