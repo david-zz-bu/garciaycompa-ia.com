@@ -293,7 +293,7 @@ document.getElementById("form-propiedad").addEventListener("submit", async (e) =
 
     // Si no se subió ninguna foto, usar la imagen genérica de "no disponible"
     if (fotosFinal.length === 0) {
-      fotosFinal = ["images/no-disponible.png"];
+      fotosFinal = ["images/no-disponible.jpg"];
     }
 
     const { error: errorActualizar } = await supabaseClient
