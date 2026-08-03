@@ -77,7 +77,7 @@ async function cargarListado() {
 function renderizarListado(lista) {
   const contenedor = document.getElementById("listado-propiedades");
   contenedor.innerHTML = lista.map(p => {
-    const portada = (p.fotos && p.fotos.length && p.fotos[0]) ? p.fotos[0] : "images/no-disponible.png";
+    const portada = (p.fotos && p.fotos.length && p.fotos[0]) ? p.fotos[0] : "images/no-image-available.jpg";
     return `
       <div class="fila-propiedad">
         <img src="${portada}" alt="">
