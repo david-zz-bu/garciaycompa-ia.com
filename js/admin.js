@@ -90,6 +90,7 @@ document.getElementById("btn-nueva-propiedad").addEventListener("click", () => {
   limpiarFormulario();
   document.getElementById("titulo-formulario").textContent = "Nueva propiedad";
   document.getElementById("caja-formulario").classList.remove("oculto");
+  window.scrollTo({ top: document.getElementById("caja-formulario").offsetTop - 20, behavior: "smooth" });
 });
 
 document.getElementById("btn-cancelar-form").addEventListener("click", () => {
