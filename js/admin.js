@@ -77,7 +77,7 @@ async function cargarListado() {
 function renderizarListado(lista) {
   const contenedor = document.getElementById("listado-propiedades");
   contenedor.innerHTML = lista.map(p => {
-    const portada = p.fotos && p.fotos.length ? p.fotos[0] : "";
+    const portada = (p.fotos && p.fotos.length && p.fotos[0]) ? p.fotos[0] : "images/no-disponible.png";
     return `
       <div class="fila-propiedad">
         <img src="${portada}" alt="">
@@ -205,19 +205,31 @@ document.getElementById("f-fotos-nuevas").addEventListener("change", (e) => {
 
 function pintarPrevisualizacion() {
   const contenedor = document.getElementById("previsualizacion-fotos");
+
   const yaSubidasHtml = FOTOS_YA_SUBIDAS.map((url, i) => `
     <div class="miniatura-wrap">
       <img src="${url}" class="miniatura-subida" title="Ya guardada">
       <button type="button" class="btn-borrar-foto" onclick="borrarFotoYaSubida(${i})" title="Quitar esta foto">&times;</button>
     </div>`
   ).join("");
+
   const pendientesHtml = FOTOS_PENDIENTES.map((archivo, i) => `
     <div class="miniatura-wrap">
       <img src="${URL.createObjectURL(archivo)}" class="miniatura-subida" title="Pendiente por subir">
       <button type="button" class="btn-borrar-foto" onclick="borrarFotoPendiente(${i})" title="Quitar esta foto">&times;</button>
     </div>`
   ).join("");
-  contenedor.innerHTML = yaSubidasHtml + pendientesHtml;
+
+  let html = "";
+  if (FOTOS_YA_SUBIDAS.length > 0) {
+    html += `<div class="subtitulo-fotos">Fotos guardadas (${FOTOS_YA_SUBIDAS.length})</div>
+             <div class="grid-fotos">${yaSubidasHtml}</div>`;
+  }
+  if (FOTOS_PENDIENTES.length > 0) {
+    html += `<div class="subtitulo-fotos">Fotos nuevas por subir (${FOTOS_PENDIENTES.length})</div>
+             <div class="grid-fotos">${pendientesHtml}</div>`;
+  }
+  contenedor.innerHTML = html;
 }
 
 function borrarFotoYaSubida(indice) {
@@ -327,7 +339,8 @@ document.getElementById("form-propiedad").addEventListener("submit", async (e) =
       progresoBox.classList.add("oculto");
     }
 
-    // Si no se subió ninguna foto, usar la imagen genérica de "no disponible"
+    // Si no se subió ninguna foto (o el array quedó con valores vacíos), usar la imagen genérica de "no disponible"
+    fotosFinal = fotosFinal.filter(Boolean);
     if (fotosFinal.length === 0) {
       fotosFinal = ["images/no-disponible.png"];
     }
