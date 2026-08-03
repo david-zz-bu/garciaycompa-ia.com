@@ -11,4 +11,4 @@
 const SUPABASE_URL = 'https://uqnvrqiiehgvchyanldj.supabase.co'; // Settings > API > Project URL
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVxbnZycWlpZWhndmNoeWFubGRqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU0OTkzNjUsImV4cCI6MjEwMTA3NTM2NX0.teQsR9vswhXA2JqA-HDjDwLVr-y1T0IQYniy16wHJ20';    // Settings > API > anon public key
 
-const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+const supabaseClient = window.supabase.createClient(https://uqnvrqiiehgvchyanldj.supabase.co, eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVxbnZycWlpZWhndmNoeWFubGRqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU0OTkzNjUsImV4cCI6MjEwMTA3NTM2NX0.teQsR9vswhXA2JqA-HDjDwLVr-y1T0IQYniy16wHJ20);
