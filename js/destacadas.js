@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     .select("*")
     .eq("destacada", true)
     .order("id", { ascending: true })
-    .limit(3);
+    .limit(65);
 
   if (error) {
     console.error("No se pudieron cargar las propiedades destacadas desde Supabase:", error);
