@@ -17,10 +17,8 @@ function etiquetaEstado(estado) {
 }
 
 function tarjetaDestacada(p) {
-  const portada = p.fotos && p.fotos.length > 0 ? p.fotos[0] : null;
-  const fondo = portada
-    ? `background-image:url('${portada}'); background-size:cover; background-position:center;`
-    : `background-color:#c9c2b3;`;
+  const portada = p.fotos && p.fotos.length > 0 ? p.fotos[0] : "images/no-image-available.jpg";
+  const fondo = `background-image:url('${portada}'); background-size:cover; background-position:center;`;
 
   const detalleHabitacionesBanos = (p.habitaciones > 0 || p.banos > 0)
     ? `<span>${p.habitaciones} hab · ${p.banos} baños</span>`
@@ -63,7 +61,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     .select("*")
     .eq("destacada", true)
     .order("id", { ascending: true })
-    .limit(65);
+    .limit(3);
 
   if (error) {
     console.error("No se pudieron cargar las propiedades destacadas desde Supabase:", error);
