@@ -5,6 +5,7 @@
 
 let FOTOS_PENDIENTES = []; // archivos elegidos en el input, antes de subir
 let FOTOS_YA_SUBIDAS = []; // URLs ya guardadas (al editar una propiedad existente)
+let TODAS_PROPIEDADES_ADMIN = []; // cache en memoria para el buscador del panel
 
 // ---------------- Autenticación ----------------
 
@@ -69,7 +70,13 @@ async function cargarListado() {
     return;
   }
 
-  contenedor.innerHTML = data.map(p => {
+  TODAS_PROPIEDADES_ADMIN = data;
+  renderizarListado(data);
+}
+
+function renderizarListado(lista) {
+  const contenedor = document.getElementById("listado-propiedades");
+  contenedor.innerHTML = lista.map(p => {
     const portada = p.fotos && p.fotos.length ? p.fotos[0] : "";
     return `
       <div class="fila-propiedad">
@@ -83,6 +90,19 @@ async function cargarListado() {
       </div>`;
   }).join("") || "<p>No hay propiedades todavía.</p>";
 }
+
+document.getElementById("buscador-admin").addEventListener("input", (e) => {
+  const termino = e.target.value.trim().toLowerCase();
+  if (!termino) {
+    renderizarListado(TODAS_PROPIEDADES_ADMIN);
+    return;
+  }
+  const filtradas = TODAS_PROPIEDADES_ADMIN.filter(p =>
+    (p.titulo || "").toLowerCase().includes(termino) ||
+    (p.ciudad || "").toLowerCase().includes(termino)
+  );
+  renderizarListado(filtradas);
+});
 
 // ---------------- Mostrar/ocultar formulario ----------------
 
@@ -185,13 +205,29 @@ document.getElementById("f-fotos-nuevas").addEventListener("change", (e) => {
 
 function pintarPrevisualizacion() {
   const contenedor = document.getElementById("previsualizacion-fotos");
-  const yaSubidasHtml = FOTOS_YA_SUBIDAS.map((url) =>
-    `<img src="${url}" class="miniatura-subida" title="Ya guardada">`
+  const yaSubidasHtml = FOTOS_YA_SUBIDAS.map((url, i) => `
+    <div class="miniatura-wrap">
+      <img src="${url}" class="miniatura-subida" title="Ya guardada">
+      <button type="button" class="btn-borrar-foto" onclick="borrarFotoYaSubida(${i})" title="Quitar esta foto">&times;</button>
+    </div>`
   ).join("");
-  const pendientesHtml = FOTOS_PENDIENTES.map((archivo) =>
-    `<img src="${URL.createObjectURL(archivo)}" class="miniatura-subida" title="Pendiente por subir">`
+  const pendientesHtml = FOTOS_PENDIENTES.map((archivo, i) => `
+    <div class="miniatura-wrap">
+      <img src="${URL.createObjectURL(archivo)}" class="miniatura-subida" title="Pendiente por subir">
+      <button type="button" class="btn-borrar-foto" onclick="borrarFotoPendiente(${i})" title="Quitar esta foto">&times;</button>
+    </div>`
   ).join("");
   contenedor.innerHTML = yaSubidasHtml + pendientesHtml;
+}
+
+function borrarFotoYaSubida(indice) {
+  FOTOS_YA_SUBIDAS.splice(indice, 1);
+  pintarPrevisualizacion();
+}
+
+function borrarFotoPendiente(indice) {
+  FOTOS_PENDIENTES.splice(indice, 1);
+  pintarPrevisualizacion();
 }
 
 async function subirFotosPendientes(propiedadId) {
@@ -293,7 +329,7 @@ document.getElementById("form-propiedad").addEventListener("submit", async (e) =
 
     // Si no se subió ninguna foto, usar la imagen genérica de "no disponible"
     if (fotosFinal.length === 0) {
-      fotosFinal = ["images/no-disponible.jpg"];
+      fotosFinal = ["images/no-disponible.png"];
     }
 
     const { error: errorActualizar } = await supabaseClient
