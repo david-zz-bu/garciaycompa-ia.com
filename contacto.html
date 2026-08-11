@@ -77,27 +77,27 @@
         </div>
       </div>
       <div class="col-lg-7">
-        <form class="row g-3">
+        <form class="row g-3" id="formContacto">
           <div class="col-md-6">
             <label>Nombre</label>
-            <input type="text" class="form-control" placeholder="Tu nombre">
+            <input type="text" class="form-control" id="nombre" placeholder="Tu nombre" required>
           </div>
           <div class="col-md-6">
             <label>Teléfono</label>
-            <input type="tel" class="form-control" placeholder="300 000 0000">
+            <input type="tel" class="form-control" id="telefono" placeholder="300 000 0000" required>
           </div>
           <div class="col-12">
             <label>¿Qué estás buscando?</label>
-            <select class="form-control">
-              <option>Comprar</option>
-              <option>Vender</option>
-              <option>Arrendar</option>
-              <option>Consultoría de zona</option>
+            <select class="form-control" id="interes">
+            <option>Comprar</option>
+            <option>Vender</option>
+            <option>Arrendar</option>
+            <option>Consultoría de zona</option>
             </select>
           </div>
           <div class="col-12">
             <label>Mensaje</label>
-            <textarea class="form-control" rows="3" placeholder="Cuéntanos qué necesitas"></textarea>
+            <textarea class="form-control" id="mensaje" rows="3" placeholder="Cuéntanos qué necesitas"></textarea>
           </div>
           <div class="col-12">
             <button type="submit" class="btn btn-primario">Enviar mensaje</button>
