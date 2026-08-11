@@ -229,5 +229,32 @@
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+  <script>
+document.getElementById('formContacto').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const nombre = document.getElementById('nombre').value.trim();
+  const telefono = document.getElementById('telefono').value.trim();
+  const interes = document.getElementById('interes').value;
+  const mensaje = document.getElementById('mensaje').value.trim();
+
+  if (!nombre || !telefono) {
+    alert('Por favor completa tu nombre y teléfono.');
+    return;
+  }
+
+  const numeroWhatsapp = '573128078855'; // mismo número del botón "Escríbenos"
+
+  let texto = `Hola, mi nombre es ${nombre}.%0A`;
+  texto += `Teléfono: ${telefono}%0A`;
+  texto += `Estoy interesado en: ${interes}%0A`;
+  if (mensaje) {
+    texto += `Mensaje: ${mensaje}`;
+  }
+
+  const url = `https://wa.me/${numeroWhatsapp}?text=${texto}`;
+  window.open(url, '_blank');
+});
+</script>
 </body>
 </html>
