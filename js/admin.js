@@ -86,6 +86,7 @@ function renderizarListado(lista) {
           <div class="meta">${p.ciudad} · ${formatoPrecioAdmin(p.precio)} · Estado: ${p.estado}</div>
         </div>
         <button class="btn btn-sm btn-secundario" style="border-color:var(--piedra); color:var(--piedra);" onclick="editarPropiedad(${p.id})">Editar</button>
+        <button class="btn btn-sm btn-secundario" style="border-color:#25D366; color:#25D366;" onclick="copiarEnlacePropiedad(${p.id})">🔗 Compartir</button>
         <button class="btn btn-sm btn-secundario" style="border-color:#b23b3b; color:#b23b3b;" onclick="borrarPropiedad(${p.id})">Borrar</button>
       </div>`;
   }).join("") || "<p>No hay propiedades todavía.</p>";
