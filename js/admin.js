@@ -202,7 +202,7 @@ async function borrarPropiedad(id) {
 // ---------------- Copiar enlace propiedad--------
 
 function copiarEnlacePropiedad(id) {
-  const url = `https://garciaycompania.com/propiedad.html?id=${id}`;
+  const url = `https://garciaycompañia.com/propiedad.html?id=${id}`;
 
   if (navigator.share) {
     // En celular abre el menú nativo de compartir (WhatsApp, correo, etc.)
