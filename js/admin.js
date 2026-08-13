@@ -195,6 +195,23 @@ async function borrarPropiedad(id) {
   cargarListado();
 }
 
+
+
+
+// ---------------- Copiar enlace propiedad--------
+
+function copiarEnlacePropiedad(id) {
+  const url = `https://garciaycompania.com/propiedad.html?id=${id}`;
+
+  if (navigator.share) {
+    // En celular abre el menú nativo de compartir (WhatsApp, correo, etc.)
+    navigator.share({ title: "García & Compañía - Propiedad", url: url });
+  } else {
+    // En computador abre WhatsApp Web con el link ya en el mensaje
+    const mensaje = `Mira esta propiedad: ${url}`;
+    window.open(`https://wa.me/?text=${encodeURIComponent(mensaje)}`, "_blank");
+  }
+}
 // ---------------- Subida de fotos ----------------
 
 document.getElementById("f-fotos-nuevas").addEventListener("change", (e) => {
