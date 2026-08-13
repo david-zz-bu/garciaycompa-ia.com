@@ -42,6 +42,14 @@ function etiquetaEstadoDetalle(estado) {
   return `<span class="tag-estado tag-estado-${estado} tag-estado-detalle">${texto}</span>`;
 }
 
+function mensajeWhatsApp(p) {
+  const mensaje =
+    `Hola, estoy interesado/a en esta propiedad: *${p.titulo}*\n` +
+    `${window.location.href}\n\n` +
+    `¿Me pueden dar más información?`;
+  return `https://wa.me/573128078855?text=${encodeURIComponent(mensaje)}`;
+}
+
 function renderizarDetalle(p) {
   document.getElementById("titulo-pagina").textContent = `${p.titulo} | García & Compañía`;
   document.getElementById("detalle-titulo").textContent = p.titulo;
@@ -133,7 +141,7 @@ function renderizarDetalle(p) {
           ${fichaTecnicaHtml}
         </div>
         ${htmlDescripcion(p.descripcion)}
-        <a href="https://wa.me/573128078855" target="_blank" class="btn btn-primario w-100 mt-3">Preguntar por esta propiedad</a>
+        <a href="${mensajeWhatsApp(p)}" target="_blank" class="btn btn-primario w-100 mt-3">Preguntar por esta propiedad</a>
       </div>
     </div>`;
 
